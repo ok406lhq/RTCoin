@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     tabBarIcon: {
-        width: 24,
-        height: 24,
+        width: 25,
+        height: 25,
     }
 });

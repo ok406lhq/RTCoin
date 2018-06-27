@@ -53,12 +53,13 @@ export const TabNav = TabNavigator(
             pressOpacity: 0.8,
             style: {
                 backgroundColor: '#fff',
-                paddingBottom: 0,
-                borderTopWidth: 0.5,
+                paddingBottom: 1,
+                borderTopWidth: 0.2,
+                paddingTop:1,
                 borderTopColor: '#ccc',
             },
             labelStyle: {
-                fontSize: 10,
+                fontSize: 11,
                 margin: 1
             },
             indicatorStyle: {height: 0},

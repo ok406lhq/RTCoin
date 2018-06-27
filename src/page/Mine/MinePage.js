@@ -26,7 +26,7 @@ const resetAction = StackActions.reset({
     ]
 });
 
-export default class DealPage extends Component {
+export default class MinePage extends Component {
 
     constructor(props) {
         super(props);
@@ -136,24 +136,24 @@ export default class DealPage extends Component {
 
                 {/* 头部 */}
                 <View style={styles.headContainer}>
-                    {/* 夜间/签到 */}
+                    {/* 夜间/设置 */}
                     <View style={styles.headTopContainer}>
                         <TouchableOpacity style={styles.topBtnStyle} activeOpacity={0.9}
                                           onPress={() => {
                                               alert('夜间')
                                           }}>
-                            <Image source={require('../../img/i_night.png')}
+                            <Image source={require('../../img/night.png')}
                                    style={styles.headTopImg} resizeMode={'contain'}/>
                             <Text style={styles.headTopText}>夜间</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.topBtnStyle} activeOpacity={0.9}
                                           onPress={() => {
-                                              alert('签到')
+                                              alert('设置')
                                           }}>
-                            <Image source={require('../../img/i_sign.png')}
+                            <Image source={require('../../img/setting.png')}
                                    style={styles.headTopImg} resizeMode={'contain'}/>
-                            <Text style={styles.headTopText}>签到</Text>
+                            <Text style={styles.headTopText}>设置</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -174,13 +174,13 @@ export default class DealPage extends Component {
                         }]} source={require('../../img/i_user.png')}
                                         resizeMode={'contain'}/>
 
-                        <Animated.Text style={[styles.userNickname, {
-                            opacity: this.state.opacity, transForm: [
-                                {
-                                    translateY: this.state.translateY
-                                }
-                            ]
-                        }]}>Pinuo</Animated.Text>
+                        {/*<Animated.Text style={[styles.userNickname, {*/}
+                            {/*opacity: this.state.opacity, transForm: [*/}
+                                {/*{*/}
+                                    {/*translateY: this.state.translateY*/}
+                                {/*}*/}
+                            {/*]*/}
+                        {/*}]}>Pinuo</Animated.Text>*/}
 
                         <View style={styles.positionContainer}>
                             <Image style={styles.positionImg}
@@ -189,7 +189,7 @@ export default class DealPage extends Component {
                         </View>
                     </View>
 
-                    {/* 收藏、历史、更贴 */}
+                    {/* 关注、资产、粉丝 */}
                     <View style={styles.headBottomContainer}>
                         <TouchableOpacity style={styles.bottomBtn} activeOpacity={1}
                                           onPress={() => {
@@ -237,8 +237,11 @@ export default class DealPage extends Component {
                         })
                     }
                 </View>
-                <CButton title={'注销'} onPress={() => this.logout()}/>
+                <View style={styles.quitContainer}>
+                    <CButton title={'注销'} onPress={() => this.logout()}/>
+                </View>
             </ScrollView>
+
         )
     }
 
@@ -300,8 +303,8 @@ class ListItem extends React.PureComponent {
 
 const styles = StyleSheet.create({
     tabBarIcon: {
-        width: 24,
-        height: 24,
+        width: 25,
+        height: 25,
     },
     itemContainer: {
         flexDirection: 'row',
@@ -353,7 +356,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 70,
         height: 30,
-        borderColor: '#e6e6e6',
+        borderColor: '#fff',
         borderWidth: 1,
         borderRadius: 20,
     },
@@ -364,15 +367,15 @@ const styles = StyleSheet.create({
     },
     headTopText: {
         fontSize: 12,
-        color: '#bfbfbf'
+        color: '#fff'
     },
     headCenterContainer: {
         alignItems: 'center',
-        marginBottom: 15
+        marginBottom: 5
     },
     userImg: {
-        width: 80,
-        height: 80,
+        width: 150,
+        height: 150,
         borderRadius: 40
     },
     userNickname: {
@@ -385,13 +388,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     positionImg: {
-        width: 10,
-        height: 10,
+        width: 12,
+        height: 12,
         marginRight: 2
     },
     positionText: {
         color: '#bfbfbf',
-        fontSize: 10
+        fontSize: 12
     },
     headBottomContainer: {
         flexDirection: 'row',
@@ -414,6 +417,13 @@ const styles = StyleSheet.create({
     },
     settingListContainer: {
         paddingLeft: 20,
+    },
+    quitContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: 20,
+        backgroundColor: '#fff'
     }
 });
 

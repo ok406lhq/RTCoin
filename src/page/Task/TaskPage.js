@@ -5,6 +5,7 @@ import {
     Image,
     StyleSheet
 } from 'react-native';
+import SwiperComponent from "../../common/SwiperComponent";
 
 export default class TaskPage extends Component {
     static navigationOptions = {
@@ -23,9 +24,7 @@ export default class TaskPage extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>这是任务</Text>
-            </View>
+            <SwiperComponent/>
         );
     }
 }
@@ -37,8 +36,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     tabBarIcon: {
-        width: 18,
-        height: 18,
+        width: 19,
+        height: 19,
     }
 });
 
