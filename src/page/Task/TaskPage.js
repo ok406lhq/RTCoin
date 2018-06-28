@@ -6,6 +6,7 @@ import {
     StyleSheet
 } from 'react-native';
 import SwiperComponent from "../../common/SwiperComponent";
+import ListViewComponent from "../../common/listViewComponent";
 
 export default class TaskPage extends Component {
     static navigationOptions = {
@@ -24,21 +25,25 @@ export default class TaskPage extends Component {
 
     render() {
         return (
-            <SwiperComponent/>
+            <View>
+                <SwiperComponent/>
+                <Text style={styles.textStyle}>基础任务</Text>
+                <ListViewComponent/>
+            </View>
+
         );
     }
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+    textStyle: {
+        fontSize: 15,
+        color: '#000',
+        marginTop: 10,
+        marginLeft: 15,
+        marginBottom: 10.
     },
     tabBarIcon: {
         width: 19,
         height: 19,
     }
 });
-
-

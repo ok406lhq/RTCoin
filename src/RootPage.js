@@ -1,28 +1,11 @@
-/**
- * Created by mymac on 2017/3/31.
- * 创建tabbar，子试图是Navigator
- */
-
 import React from 'react';
 import {TabNavigator} from 'react-navigation';
-
 
 import HomePage from './page/Home/HomePage';
 import FriendPage from './page/Friend/FriendPage';
 import TaskPage from './page/Task/TaskPage';
 import MinePage from './page/Mine/MinePage';
 import DealPage from './page/Deal/DealPage';
-
-
-/*
-* 1.animated bool   进行设置当状态栏的状态发生变化的时候是否需要加入动画。当前该动画支持backgroundColor,barStyle和hidden属性
- 2.hidden  bool  进行设置状态栏是否隐藏
- 3.backgroundColor   color类型，仅支持Android设备，设置状态栏的背景颜色
- 4.translucent bool类型，仅支持Android设备, 进行设置状态栏是否为透明。当状态栏的值为true的时候，应用将会在状态栏下面进行绘制显示。这样在Android平台上面就是沉浸式的效果，可以达到Android和iOS应用一致性效果。该值常常配置半透明效果的状态栏颜色一起使用
- 5.barStyle  enum('default','light-content')  枚举类型，仅支持iOS设备。进行设置状态栏文字的颜色
- 6.networkActivityIndicatorVisible   bool类型，仅支持iOS设备。设置状态栏上面的网络进度加载器是否进行显示
- 7.showHideTransition   enum('fade','slide') 枚举类型，仅支持iOS设备。进行设置当隐藏或者显示状态栏的时候的动画效果。默认值为'fade'
-* */
 
 export const TabNav = TabNavigator(
     {
@@ -44,13 +27,21 @@ export const TabNav = TabNavigator(
     },
     {
         tabBarOptions: {
+            //当前选中的tab bar的文本颜色和图标颜色
             activeTintColor: '#4BC1D2',
+            //当前未选中的tab bar的文本颜色和图标颜色
             inactiveTintColor: '#000',
+            //是否显示tab bar的图标，默认是false
             showIcon: true,
+            //showLabel - 是否显示tab bar的文本，默认是true
             showLabel: true,
+            //是否将文本转换为大小，默认是true
             upperCaseLabel: false,
+            //material design中的波纹颜色(仅支持Android >= 5.0)
             pressColor: '#788493',
+            //按下tab bar时的不透明度(仅支持iOS和Android < 5.0).
             pressOpacity: 0.8,
+            //tab bar的样式
             style: {
                 backgroundColor: '#fff',
                 paddingBottom: 1,
@@ -58,15 +49,22 @@ export const TabNav = TabNavigator(
                 paddingTop:1,
                 borderTopColor: '#ccc',
             },
+            //tab bar的文本样式
             labelStyle: {
                 fontSize: 11,
                 margin: 1
             },
+            //tab 页指示符的样式 (tab页下面的一条线).
             indicatorStyle: {height: 0},
         },
+        //tab bar的位置, 可选值： 'top' or 'bottom'
         tabBarPosition: 'bottom',
+        //是否允许滑动切换tab页
         swipeEnabled: true,
+        //是否在切换tab页时使用动画
         animationEnabled: false,
+        //是否懒加载
         lazy: true,
+        //返回按钮是否会导致tab切换到初始tab页？ 如果是，则设置为initialRoute，否则为none。 缺省为initialRoute。
         backBehavior: 'none',
     });
