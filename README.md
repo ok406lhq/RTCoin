@@ -8,9 +8,9 @@ RN招财猫，持续更新~
 #### 学无止境，Fighting！:punch::punch::punch:
 
 
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/5f5cf43e5273300a193c647ccf7a3f95a877c8fe/screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180627180915.png)
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/5d64be6a6062ffdc9f891f09eaf97edd7b5bbe3f/screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180627180923.png)
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/5d64be6a6062ffdc9f891f09eaf97edd7b5bbe3f/screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180627180930.jpg)
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/5d64be6a6062ffdc9f891f09eaf97edd7b5bbe3f/screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180627180937.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/1.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/2.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/3.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/4.jpg)
 
 [顶部](#readme)
