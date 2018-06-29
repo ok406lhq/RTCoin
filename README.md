@@ -10,7 +10,7 @@ RN招财猫，持续更新~
 
 ![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/1.jpg)
 ![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/2.jpg)
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/3.jpg)
-![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/4.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/3.png)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/4.png)
 
 [顶部](#readme)
