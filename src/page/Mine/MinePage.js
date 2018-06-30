@@ -140,15 +140,6 @@ export default class MinePage extends Component {
                     <View style={styles.headTopContainer}>
                         <TouchableOpacity style={styles.topBtnStyle} activeOpacity={0.9}
                                           onPress={() => {
-                                              alert('夜间')
-                                          }}>
-                            <Image source={require('../../img/night.png')}
-                                   style={styles.headTopImg} resizeMode={'contain'}/>
-                            <Text style={styles.headTopText}>夜间</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={styles.topBtnStyle} activeOpacity={0.9}
-                                          onPress={() => {
                                               alert('设置')
                                           }}>
                             <Image source={require('../../img/setting.png')}
@@ -347,7 +338,7 @@ const styles = StyleSheet.create({
     },
     headTopContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
 
     },
     topBtnStyle: {
@@ -388,13 +379,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     positionImg: {
-        width: 12,
-        height: 12,
+        width: 15,
+        height: 15,
         marginRight: 2
     },
     positionText: {
         color: '#bfbfbf',
-        fontSize: 12
+        fontSize: 15
     },
     headBottomContainer: {
         flexDirection: 'row',
