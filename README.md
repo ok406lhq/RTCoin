@@ -14,3 +14,9 @@ RN招财猫，持续更新~
 ![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/4.png)
 
 [顶部](#readme)
+
+--- 
+
+6.29更新
+实现了ListView的九宫格效果，，并给每个item都添加了点击事件，效果如下：
+![]()
