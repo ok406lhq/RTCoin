@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from "react-native";
 
 import {THEME} from '../assets/css/color';
 
@@ -12,8 +11,8 @@ export function getStackOptions(title) {
             backgroundColor: THEME
         },
         headerTitleStyle: {
-            alignSelf:"auto",
+            paddingTop:8,
             fontSize:17
-        },
+        }
     }
 }

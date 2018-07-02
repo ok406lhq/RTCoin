@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
-import {NavigationActions} from 'react-navigation';
+import {View, Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView} from 'react-native';
 import {THEME, THEME_BACKGROUND, THEME_TEXT} from '../../assets/css/color';
 import {getStackOptions} from '../../common/navigatorOpts';
 import CButton from '../../common/button';
@@ -95,28 +94,31 @@ export class FindAccountPage extends Component {
         let codeBtnText = this.state && this.state.sendFlag && this.state.second ? '已发送' + this.state.second + 's' : '获取验证码';
         let codeBtnStyle = this.state && this.state.sendFlag ? styles.codeBtnDisabled : styles.codeBtn;
         return (
-
-            <View style={styles.regPage}>
+            <KeyboardAvoidingView
+                style={styles.regPage}
+                behavior="margin">
                 <TextInput style={styles.regInput} placeholder='手机号码' keyboardType={'numeric'}
-                           autoCapitalize={'none'} maxLength={11}
+                           autoCapitalize={'none'} maxLength={11} underlineColorAndroid={'transparent'}
                            onChangeText={(text) => this.mobile = text}/>
                 <View style={[styles.codeRow, styles.regInput]}>
                     <TextInput style={{flex: 1}} placeholder='手机验证码' keyboardType={'numeric'}
-                               autoCapitalize={'none'} maxLength={6}
+                               autoCapitalize={'none'} maxLength={6} underlineColorAndroid={'transparent'}
                                onChangeText={(text) => this.code = text}/>
                     <CButton disabled={this.state.sendFlag}
                              style={codeBtnStyle} title={codeBtnText}
                              onPress={() => this.getCode()}/>
                 </View>
                 <TextInput style={styles.regInput} placeholder='密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20}
+                           autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
                            onChangeText={(text) => this.password = text}/>
                 <TextInput style={styles.regInput} placeholder='确认密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20}
+                           autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
                            onChangeText={(text) => this.password2 = text}/>
-                <CButton style={styles.regInput} title={'找回密码'} onPress={() => this.doSubmit()}/>
+                <CButton style={styles.regInput} title={'找回密码'}
+                         onPress={() => this.doSubmit()}/>
                 <Text style={styles.message}>{message}</Text>
-            </View>
+                <View style={{height:40}}/>
+            </KeyboardAvoidingView>
         )
     }
 }
@@ -125,9 +127,8 @@ const styles = StyleSheet.create({
     regPage: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         padding: 20,
-        paddingTop: 100,
         backgroundColor: THEME_BACKGROUND
     },
     regInput: {

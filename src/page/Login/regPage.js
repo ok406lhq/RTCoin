@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput, Alert} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import {NavigationActions, StackActions} from 'react-navigation';
 import {connect} from 'react-redux'; // 引入connect函数
 import * as registerAction from './registerAction';// 导入action方法
@@ -70,20 +70,20 @@ class RegPage extends Component {
     render() {
         let message = this.state && this.state.message ? this.state.message : '';
         return (
-            <View style={styles.regPage}>
-                <TextInput style={styles.regInput} placeholder='手机号码' keyboardType={'numeric'}
-                           autoCapitalize={'none'} maxLength={20}
-                           onChangeText={(text) => this.mobile = text}/>
-                <TextInput style={styles.regInput} placeholder='密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20}
-                           onChangeText={(text) => this.password = text}/>
-                <TextInput style={styles.regInput} placeholder='确认密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20}
-                           onChangeText={(text) => this.password2 = text}/>
-                <CButton style={styles.regInput} title={'提交'} onPress={() => this.doReg()}/>
-                <Text style={styles.message}>{message}</Text>
-                <Text style={{marginTop: 16, fontSize: 12}}>状态: {this.props.status}</Text>
-            </View>
+                <View style={styles.regPage}>
+                    <TextInput style={styles.regInput} placeholder='手机号码' keyboardType={'numeric'}
+                               autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.mobile = text}/>
+                    <TextInput style={styles.regInput} placeholder='密码' secureTextEntry={true}
+                               autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.password = text}/>
+                    <TextInput style={styles.regInput} placeholder='确认密码' secureTextEntry={true}
+                               autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.password2 = text}/>
+                    <CButton style={styles.regInput} title={'提交'} onPress={() => this.doReg()}/>
+                    <Text style={styles.message}>{message}</Text>
+                    <Text style={{marginTop: 16, fontSize: 12}}>状态: {this.props.status}</Text>
+                </View>
         )
     }
 }
