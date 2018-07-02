@@ -17,6 +17,11 @@ RN招财猫，持续更新~
 
 --- 
 
-6.29更新
-实现了ListView的九宫格效果，，并给每个item都添加了点击事件，效果如下：
+* 6.29更新
+##### 实现了ListView的九宫格效果，，并给每个item都添加了点击事件，效果如下：（左）
+* 7.01更新
+##### 用StatusBar实现了沉浸式状态栏的效果，并添加了物理返回键的监听，效果如下：（右）
 ![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/6.jpg)
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/ad6fdc902d5c9f5059371efc4ef30d407d012a59/screenshots/8.png)
+##### 参照 [如何让你的 React Native 应用在键盘弹出时优雅地响应](https://github.com/rccoder/blog/issues/25),用KeyboardAvoidingView解决了:点击文本输入框时，键盘会弹出并且遮盖住输入框的问题：
+![](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/7.gif)
