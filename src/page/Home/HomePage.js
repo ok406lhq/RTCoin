@@ -4,10 +4,32 @@ import {
     Text,
     Image,
     StyleSheet,
-    StatusBar
+    StatusBar,
+    BackHandler,
+    ToastAndroid
 } from 'react-native';
 
 export default class HomePage extends Component {
+
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+    onBackAndroid = () => {
+        if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+            //最近2秒内按过back键，可以退出应用。
+            BackHandler.exitApp();
+            return false;
+        }
+        this.lastBackPressed = Date.now();
+        ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
+        // return true;
+        return true;
+    };
+
     static navigationOptions = {
         tabBarLabel: '首页',
         tabBarIcon: ({focused}) => {
