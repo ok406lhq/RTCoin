@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput,StatusBar} from 'react-native';
 import {connect} from 'react-redux'; // 引入connect函数
 import * as loginAction from './loginAction';// 导入action方法
 import {NavigationActions, StackActions} from 'react-navigation';
@@ -86,6 +86,12 @@ class LoginPage extends Component {
         let message = this.state && this.state.message ? this.state.message : '';
         return (
             <View style={styles.loginPage}>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
                 <View style={styles.loginSection}>
                     <Text style={styles.loginTitle}>招财猫 1.0</Text>
                     <TextInput style={styles.loginInput} placeholder='手机号码' keyboardType={'numeric'}

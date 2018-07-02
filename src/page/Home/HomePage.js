@@ -3,7 +3,8 @@ import {
     View,
     Text,
     Image,
-    StyleSheet
+    StyleSheet,
+    StatusBar
 } from 'react-native';
 
 export default class HomePage extends Component {
@@ -24,6 +25,12 @@ export default class HomePage extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
                 <Text>这是首页</Text>
             </View>
         );

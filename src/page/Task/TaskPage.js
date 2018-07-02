@@ -4,7 +4,8 @@ import {
     Text,
     Image,
     StyleSheet,
-    ScrollView
+    ScrollView,
+    StatusBar
 } from 'react-native';
 import SwiperComponent from "../../common/SwiperComponent";
 import ListViewComponent from "../../common/listViewComponent";
@@ -28,13 +29,12 @@ export default class TaskPage extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                <View>
                     <SwiperComponent/>
                     <Text style={styles.textStyle}>基础任务</Text>
                     <ListViewComponent/>
                     <Text style={styles.textStyle}>独家任务</Text>
                     <ListViewComponent2/>
-                </View>
+
             </ScrollView>
         );
     }
