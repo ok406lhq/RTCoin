@@ -4,9 +4,11 @@ import {TabNav} from "./RootPage";
 import LoginPage from "./page/Login/loginPage";
 import RegPage from "./page/Login/regPage";
 import {FindAccountPage} from "./page/Login/findAccountPage"; // 路由导航
-import storage from './common/storage'; // 本地存储全局对象
+import storage from './common/storage';
+import VideoPage from "./page/Home/VideoPage"; // 本地存储全局对象
 
 const App = StackNavigator({
+        Video: {screen: VideoPage},
         Login: {screen: LoginPage}, // 登录页
         Reg: {screen: RegPage}, // 注册页
         FindAccount: {screen: FindAccountPage}, // 找回密码页
