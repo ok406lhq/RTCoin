@@ -8,6 +8,7 @@ import {
     BackHandler,
     ToastAndroid
 } from 'react-native';
+import CButton from "../../common/button";
 
 export default class HomePage extends Component {
 
@@ -53,7 +54,7 @@ export default class HomePage extends Component {
                     backgroundColor={"#73808080"}
                     barStyle={"light-content"}
                 />
-                <Text>这是首页</Text>
+                <CButton title={'播放视频'}onPress={() => {this.props.navigation.navigate('Video')}} />
             </View>
         );
     }
