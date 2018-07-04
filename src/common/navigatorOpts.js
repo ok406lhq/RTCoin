@@ -7,12 +7,12 @@ export function getStackOptions(title) {
         title: title || '',
         headerTintColor: 'white',
         headerStyle: {
-            height:54,
+            height: 54,
             backgroundColor: THEME
         },
         headerTitleStyle: {
-            paddingTop:8,
-            fontSize:17
+            paddingTop: 8,
+            fontSize: 17
         }
     }
 }

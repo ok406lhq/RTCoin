@@ -19,6 +19,7 @@ export default class HomePage extends Component {
     componentWillUnmount() {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
     }
+
     onBackAndroid = () => {
         if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
             //最近2秒内按过back键，可以退出应用。
@@ -54,7 +55,9 @@ export default class HomePage extends Component {
                     backgroundColor={"#73808080"}
                     barStyle={"light-content"}
                 />
-                <CButton title={'播放视频'}onPress={() => {this.props.navigation.navigate('Video')}} />
+                <CButton title={'播放视频'} onPress={() => {
+                    this.props.navigation.navigate('Video')
+                }}/>
             </View>
         );
     }

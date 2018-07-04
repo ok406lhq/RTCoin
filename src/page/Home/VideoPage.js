@@ -6,7 +6,8 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
+    Button
 } from 'react-native';
 
 import Video from 'react-native-video';
@@ -22,7 +23,8 @@ function formatTime(second) {
         return (v >> 0) < 10 ? "0" + v : v;
     };
     console.log([zero(h), zero(i), zero(s)].join(":"));
-    return [zero(h), zero(i), zero(s)].join(":");
+    // return [zero(h), zero(i), zero(s)].join(":");
+    return zero(s);
 }
 
 export default class VideoPage extends Component {
@@ -139,12 +141,20 @@ export default class VideoPage extends Component {
                         repeat={false}
                     />
                 </TouchableOpacity>
+                <View style={styles.textStyle}>
+                    <Text style={styles.volumeControl}>
+                        {formatTime(this.state.duration - this.state.currentTime)}
+                    </Text>
+
+                    <Button style={styles.btnStyle} title={'关闭广告'} color={'#73808080'}
+                            onPress={() => {
+                                this.props.navigation.goBack()
+                            }}/>
+                </View>
+
 
                 <View style={styles.controls}>
                     <View style={styles.generalControls}>
-                        <Text style={styles.volumeControl}>
-                            {formatTime(this.state.duration - this.state.currentTime)}
-                        </Text>
 
                     </View>
 
@@ -164,9 +174,21 @@ export default class VideoPage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: 'black',
+    },
+    textStyle: {
+        paddingLeft: 10,
+        paddingTop: 10,
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+    },
+    btnStyle: {
+        paddingLeft: 10,
+        paddingTop: 10,
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
     },
     fullScreen: {
         position: 'absolute',
@@ -202,7 +224,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderRadius: 4,
         overflow: 'hidden',
-        paddingBottom: 10,
+        paddingTop: 10,
     },
     rateControl: {
         flex: 1,
@@ -210,8 +232,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     volumeControl: {
-        fontSize:15,
-        color:'#fff',
+        fontSize: 25,
+        color: '#fff',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
