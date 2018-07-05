@@ -56,7 +56,7 @@ export default class listViewComponent extends Component {
 
     _onPress(e) {
 
-        alert(">>>点击 " + e);
+        // alert(">>>点击 " + e);
     }
 
 }

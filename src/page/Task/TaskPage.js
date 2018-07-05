@@ -29,12 +29,11 @@ export default class TaskPage extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                    <SwiperComponent/>
-                    <Text style={styles.textStyle}>基础任务</Text>
-                    <ListViewComponent/>
-                    <Text style={styles.textStyle}>独家任务</Text>
-                    <ListViewComponent2/>
-
+                <SwiperComponent/>
+                <Text style={styles.textStyle}>基础任务</Text>
+                <ListViewComponent/>
+                <Text style={styles.textStyle}>独家任务</Text>
+                <ListViewComponent2 navigate={this.props.navigation.navigate}/>
             </ScrollView>
         );
     }
@@ -50,6 +49,11 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 15,
         marginBottom: 10.
+    },
+    viewItem: {
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        padding: 10
     },
     tabBarIcon: {
         width: 19,

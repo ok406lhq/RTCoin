@@ -5,6 +5,7 @@ import {
     Image,
     StyleSheet,
 } from 'react-native';
+import TabTopView from "../../common/TabTopView";
 
 export default class FriendPage extends Component {
     static navigationOptions = {
@@ -23,9 +24,7 @@ export default class FriendPage extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>这是好友</Text>
-            </View>
+            <TabTopView/>
         );
     }
 }

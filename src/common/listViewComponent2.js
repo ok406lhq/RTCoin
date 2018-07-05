@@ -5,6 +5,7 @@ import {
     TextInput,
     ListView,
     TouchableOpacity,
+    TouchableHighlight,
     Image,
     Text,
     Alert,
@@ -28,14 +29,13 @@ export default class listViewComponent2 extends Component {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         //2.设置返回数据
         this.state = {dataSource: ds.cloneWithRows(ShareData.data)};
-        thiz = this;
     }
 
     render() {
         return (
             <ListView
                 dataSource={this.state.dataSource}
-                renderRow={this._renderRow}
+                renderRow={this._renderRow.bind(this)}
                 contentContainerStyle={styles.listViewStyle}
             />
         );
@@ -44,7 +44,7 @@ export default class listViewComponent2 extends Component {
     _renderRow(rowData, sectionID, rowID, highlightRow) {
         return (
             <TouchableOpacity activeOpacity={0.5} onPress={() => {
-                thiz._onPress(rowData.title)
+                this._onPress(rowData.title)
             }}>
                 <View style={styles.innerViewStyle}>
                     <Image source={{uri: rowData.icon}} style={styles.iconStyle}/>
@@ -55,8 +55,10 @@ export default class listViewComponent2 extends Component {
     }
 
     _onPress(e) {
-
-        alert(">>>点击 " + e);
+        if (e === '播放视频') {
+            this.props.navigate('Video');
+        }
+        // alert(">>>点击 " + e);
     }
 
 }
