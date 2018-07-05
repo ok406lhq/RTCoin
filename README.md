@@ -33,10 +33,13 @@ RN招财猫，持续更新~
 
 <div align="center">
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/7.gif"/>
-    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/9.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/10.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/11.png"/>
   </div>
 
 * 7.03更新
-##### 嵌入自己封装的react-native-vedio视频播放器(图右上)，参照[react-native-vedio中文文档](https://www.jianshu.com/p/2db4e3e2c343)，这是自己根据github上的文档翻译的，国内找不到中文文档:sob::sob::sob:
+##### 嵌入自己封装的react-native-vedio视频播放器(上图中)，参照[react-native-vedio中文文档](https://www.jianshu.com/p/2db4e3e2c343)，这是自己根据github上的文档翻译的，国内找不到中文文档:sob::sob::sob:
 
+* 7.05更新
+##### 解决了ListView中item点击后跳转到指定页面的问题，并添加了新闻阅读(即使用第三方提供的api接口请求提供网络数据)，并利用FlatList来显示拿到的数据(上图右)，nice！:raised_hands::raised_hands::raised_hands:
 [顶部](#readme)
