@@ -1,32 +1,21 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    BackHandler,
-    ActivityIndicator,
-    ToastAndroid,
-    FlatList
-} from 'react-native';
-import {comingMovies, queryMovies} from "../../common/Service";
+import {View, FlatList, Text, ActivityIndicator, StyleSheet, BackHandler} from 'react-native';
+import {queryMovies, comingMovies} from '../../common/Service';
 import MovieItemCell from "../../widget/MovieItemCell";
 
-export default class HomePage extends Component {
+export default class MovieListScreen extends Component {
 
     static navigationOptions = {
-        tabBarLabel: '首页',
-        tabBarIcon: ({focused}) => {
-            if (focused) {
-                return (
-                    <Image style={styles.tabBarIcon} source={require('../../img/home_sel.png')}/>
-                );
-            }
-            return (
-                <Image style={styles.tabBarIcon} source={require('../../img/home_nor.png')}/>
-            );
-        },
+        headerTitle: '豆瓣电影'
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            movieList: [],  // 电影列表的数据源
+            loaded: false,  // 用来控制loading视图的显示，当数据加载完成，loading视图不再显示
+        };
+    }
 
     componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
@@ -37,23 +26,8 @@ export default class HomePage extends Component {
     }
 
     onBackAndroid = () => {
-        if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
-            //最近2秒内按过back键，可以退出应用。
-            BackHandler.exitApp();
-            return false;
-        }
-        this.lastBackPressed = Date.now();
-        ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
-        // return true;
+        this.props.navigation.goBack();
         return true;
-    };
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            movieList: [],  // 电影列表的数据源
-            loaded: false,  // 用来控制loading视图的显示，当数据加载完成，loading视图不再显示
-        };
     }
 
     componentDidMount() {
@@ -76,11 +50,11 @@ export default class HomePage extends Component {
             )
         }
         return (
-                <FlatList
-                    data={this.state.movieList}
-                    renderItem={this._renderItem}
-                    keyExtractor={(item) => item.id}
-                />
+            <FlatList
+                data={this.state.movieList}
+                renderItem={this._renderItem}
+                keyExtractor={(item) => item.id}
+            />
         )
     }
 
@@ -191,6 +165,7 @@ export default class HomePage extends Component {
         }).done();
     }
 }
+
 const styles = StyleSheet.create({
     loadingView: {
         flex: 1,
@@ -198,15 +173,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10
-    },
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    tabBarIcon: {
-        width: 25,
-        height: 25,
     }
 });

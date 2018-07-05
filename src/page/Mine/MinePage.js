@@ -164,11 +164,11 @@ export default class MinePage extends Component {
                                         resizeMode={'contain'}/>
 
                         {/*<Animated.Text style={[styles.userNickname, {*/}
-                            {/*opacity: this.state.opacity, transForm: [*/}
-                                {/*{*/}
-                                    {/*translateY: this.state.translateY*/}
-                                {/*}*/}
-                            {/*]*/}
+                        {/*opacity: this.state.opacity, transForm: [*/}
+                        {/*{*/}
+                        {/*translateY: this.state.translateY*/}
+                        {/*}*/}
+                        {/*]*/}
                         {/*}]}>Pinuo</Animated.Text>*/}
 
                         <View style={styles.positionContainer}>

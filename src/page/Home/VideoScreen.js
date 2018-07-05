@@ -28,7 +28,7 @@ function formatTime(second) {
     return zero(s);
 }
 
-export default class VideoPage extends Component {
+export default class VideoScreen extends Component {
 
     static navigationOptions = {
         header: null

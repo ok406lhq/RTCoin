@@ -24,7 +24,7 @@ export default class DealPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>这是交易</Text>
+                <Image style={{flex: 1}} resizeMode={'contain'} source={require('../../img/unnotes.png')}/>
             </View>
         );
     }

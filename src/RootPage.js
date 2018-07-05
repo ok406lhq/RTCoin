@@ -46,7 +46,7 @@ export const TabNav = TabNavigator(
                 backgroundColor: '#fff',
                 paddingBottom: 1,
                 borderTopWidth: 0.2,
-                paddingTop:1,
+                paddingTop: 1,
                 borderTopColor: '#ccc',
             },
             //tab bar的文本样式
