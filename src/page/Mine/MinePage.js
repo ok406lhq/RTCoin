@@ -360,7 +360,7 @@ const styles = StyleSheet.create({
     },
     headCenterContainer: {
         alignItems: 'center',
-        marginBottom: 5
+        marginBottom: 0
     },
     userImg: {
         width: 150,
