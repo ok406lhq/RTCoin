@@ -40,3 +40,11 @@
 * 7.05更新
 ##### 解决了ListView中item点击后跳转到指定页面的问题，并添加了新闻阅读(即使用第三方提供的api接口请求提供网络数据)，并利用FlatList来显示拿到的数据(上图右)，nice！:raised_hands::raised_hands::raised_hands:
 [顶部](#readme)
+
+* 7.06更新
+###### 重新设计了登录界面，使得更加美观好看，并附有动画效果~这是参照一哥们写的项目[react-native-login-screen](https://github.com/dwicao/react-native-login-screen)效果如下图右→
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/12.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/dwicao/react-native-login-screen/master/demo.gif"/>
+  </div>
+
