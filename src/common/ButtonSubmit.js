@@ -9,9 +9,8 @@ import {
     Alert,
     View,
 } from 'react-native';
-import {Actions, ActionConst} from 'react-native-router-flux';
 
-import spinner from '../img/loading.gif';
+import spinner from '../img/loading2.png';
 
 
 const Dimensions = require('Dimensions');
