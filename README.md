@@ -38,7 +38,8 @@
 ##### 嵌入自己封装的react-native-vedio视频播放器(上图中)，参照[react-native-vedio中文文档](https://www.jianshu.com/p/2db4e3e2c343)，这是自己根据github上的文档翻译的，国内找不到中文文档:sob::sob::sob:
 
 * 7.05更新
-##### 解决了ListView中item点击后跳转到指定页面的问题，并添加了新闻阅读(即使用第三方提供的api接口请求提供网络数据)，并利用FlatList来显示拿到的数据(上图右)，nice！:raised_hands::raised_hands::raised_hands:
+##### 解决了ListView中item点击后跳转到指定页面的问题，就是需要在调用组件的页面中声明“this.props.navigation.navigate=navigate”，这样在组件中就可以进行对页面的跳转。
+##### 并添加了新闻阅读(即使用第三方提供的api接口请求提供网络数据)，并利用FlatList来显示拿到的数据(上图右)，nice！:raised_hands::raised_hands::raised_hands:
 [顶部](#readme)
 
 * 7.06更新
