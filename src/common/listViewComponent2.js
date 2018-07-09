@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 //导入数据
 import ShareData from "../assets/shareData2.json";
+import RadiusButton from "./RadiusButton";
 //获取屏幕宽度
 let Dimensions = require("Dimensions");
 let {width} = Dimensions.get('window');
@@ -49,6 +50,20 @@ export default class listViewComponent2 extends Component {
                 <View style={styles.innerViewStyle}>
                     <Image source={{uri: rowData.icon}} style={styles.iconStyle}/>
                     <Text>{rowData.title}</Text>
+                    <RadiusButton
+                        btnName={rowData.btn}
+                        textStyle={{
+                            fontSize: 12,
+                            color: '#ffffff',
+                        }}
+                        btnStyle={{
+                            marginTop: 5,
+                            width: 75,
+                            height: 25,
+                            borderRadius: 25,
+                        }}
+                        underlayColor='#4169e1'>
+                    </RadiusButton>
                 </View>
             </TouchableOpacity>
         );
@@ -59,8 +74,9 @@ export default class listViewComponent2 extends Component {
             this.props.navigate('Video');
         } else if (e === '阅读新闻') {
             this.props.navigate('Movie');
+        } else {
+            alert(">>>点击 " + e);
         }
-        // alert(">>>点击 " + e);
     }
 
 }
@@ -72,8 +88,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     iconStyle: {
-        width: 80,
-        height: 80,
+        width: 50,
+        height: 50,
     },
     innerViewStyle: {
         width: cellWH,

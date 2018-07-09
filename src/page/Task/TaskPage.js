@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8F8F8'
     },
     textStyle: {
+        fontWeight:'bold',
         fontSize: 15,
         color: '#000',
         marginTop: 10,

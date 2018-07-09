@@ -6,7 +6,6 @@ import {
     Animated,
     Easing,
     Image,
-    Alert,
     View,
 } from 'react-native';
 

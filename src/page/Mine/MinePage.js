@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import {StackActions, NavigationActions} from "react-navigation";
 import CButton from '../../common/button';
+import RadiusButton from "../../common/RadiusButton";
 
 
 const {width: screenWidth, height: screenHeight} = Dimensions.get('window')
