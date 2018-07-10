@@ -12,8 +12,8 @@ import ScrollableTabView, {DefaultTabBar} from "react-native-scrollable-tab-view
 const activeTabColor = '#1E82D2';
 const defaultTabColor = '#949494';
 
-var Dimensions = require('Dimensions');
-var ScreenWidth = Dimensions.get('window').width;
+const Dimensions = require('Dimensions');
+const ScreenWidth = Dimensions.get('window').width;
 
 export default class TabTopView extends Component {
     render() {
