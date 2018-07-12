@@ -1,6 +1,9 @@
 package com.rtcoin;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
+
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +15,10 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "RTCoin";
     }
+
+      @Override
+        protected void onCreate(Bundle saveInstanceState){
+            SplashScreen.show(this);
+            super.onCreate(saveInstanceState);
+        }
 }

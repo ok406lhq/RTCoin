@@ -5,7 +5,9 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    Text
+    View,
+    Text,
+    StatusBar
 } from 'react-native';
 import ScrollableTabView, {DefaultTabBar} from "react-native-scrollable-tab-view";
 
@@ -18,28 +20,41 @@ const ScreenWidth = Dimensions.get('window').width;
 export default class TabTopView extends Component {
     render() {
         return (
-            <ScrollableTabView
-                style={styles.container}
-                scrollWithoutAnimation={false}
-                locked={false}
-                initialPage={0}
-                renderTabBar={() => <DefaultTabBar style={styles.border}/>}
-                tabBarUnderlineStyle={styles.underline}
-                tabBarInactiveTextColor={defaultTabColor}
-                tabBarActiveTextColor={activeTabColor}>
+            <View style={styles.container}>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
+                <ScrollableTabView
+                    scrollWithoutAnimation={false}
+                    locked={false}
+                    initialPage={0}
+                    renderTabBar={() => <DefaultTabBar style={styles.border}/>}
+                    tabBarUnderlineStyle={styles.underline}
+                    tabBarInactiveTextColor={defaultTabColor}
+                    tabBarActiveTextColor={activeTabColor}>
 
-                <Text style={styles.textStyle} tabLabel='关注'>关注</Text>
-                <Text style={styles.textStyle} tabLabel='粉丝'>粉丝</Text>
-                <Text style={styles.textStyle} tabLabel='推荐'>推荐</Text>
-            </ScrollableTabView>
+                    <Text style={styles.textStyle} tabLabel='关注' onPress={() => {
+                        this._onPress();
+                    }}>关注</Text>
+                    <Text style={styles.textStyle} tabLabel='粉丝'>粉丝</Text>
+                    <Text style={styles.textStyle} tabLabel='推荐'>推荐</Text>
+                </ScrollableTabView>
+            </View>
         );
+    }
+
+    _onPress() {
+        this.props.navigate('Movie');
     }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 15
+        marginTop: 20
     },
     lineStyle: {
         width: ScreenWidth / 4,

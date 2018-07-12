@@ -24,7 +24,7 @@ export default class FriendPage extends Component {
 
     render() {
         return (
-            <TabTopView/>
+            <TabTopView navigate={this.props.navigation.navigate}/>
         );
     }
 }

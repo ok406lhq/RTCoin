@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import configureStore from './reducers/configureStore';
 import App from './app';
+import SplashScreen from "react-native-splash-screen";
 
 const store = configureStore();
 store.subscribe(() => {
@@ -9,6 +10,11 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 export default class Root extends Component {
+
+    componentDidMount() {
+        SplashScreen.hide(); // 隐藏启动屏
+    }
+
     render() {
         return (
             // 实现app和store的关联，等于整个系统的组件都被包含住了

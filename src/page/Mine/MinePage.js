@@ -236,8 +236,7 @@ export default class MinePage extends Component {
     }
 
     logout() {
-        global.storage.remove({key: 'user'});
-        this.props.navigation.dispatch(resetAction)
+        this.props.navigation.navigate('Login');
     }
 }
 
