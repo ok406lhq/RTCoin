@@ -48,4 +48,11 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/12.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/dwicao/react-native-login-screen/master/demo.gif"/>
   </div>
+  
+* 7.12更新 
+###### 更新了闪屏页，获取联系人等。用到了跟原生代码做交互的依赖库react-native-splash-screen
+
+<div align="center"> 
+   <img width="280" height="497" src="https://github.com/ok406lhq/RTCoin/blob/c2934ac94fa37e45dfaf6d19e1bb373e4b1fe0d6/screenshots/splash.gif"/>
+</div>
 
