@@ -11,7 +11,7 @@ const {width} = Dimensions.get('window')
 
 const styles = {
     container: {
-        height: 160
+        height: 130
     },
 
     wrapper: {},
@@ -76,7 +76,7 @@ export default class SwiperComponent extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Swiper style={styles.wrapper} height={240}
+                <Swiper style={styles.wrapper}
                         onMomentumScrollEnd={(e, state, context) => console.log('index:', state.index)}
                         paginationStyle={styles.paginationStyle}
                         dotStyle={styles.dotStyle}
@@ -85,17 +85,17 @@ export default class SwiperComponent extends Component {
                     <View style={styles.slide}
                           title={<Text numberOfLines={1}>Aussie tourist dies at Bali hotel</Text>}>
                         <Image resizeMode='stretch' style={styles.image}
-                               source={require('../img/swiper_1.jpg')}/>
+                               source={require('../img/s1.jpg')}/>
                     </View>
                     <View style={styles.slide}
                           title={<Text numberOfLines={1}>Big lie behind Nine’s new show</Text>}>
                         <Image resizeMode='stretch' style={styles.image}
-                               source={require('../img/swiper_2.jpg')}/>
+                               source={require('../img/s2.jpg')}/>
                     </View>
                     <View style={styles.slide}
                           title={<Text numberOfLines={1}>Why Stone split from Garfield</Text>}>
                         <Image resizeMode='stretch' style={styles.image}
-                               source={require('../img/swiper_3.jpg')}/>
+                               source={require('../img/s3.jpg')}/>
                     </View>
                     <View style={styles.slide}
                           title={<Text numberOfLines={1}>Learn from Kim K to land that job</Text>}>

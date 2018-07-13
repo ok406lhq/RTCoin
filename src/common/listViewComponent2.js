@@ -12,7 +12,6 @@ import {
     View
 } from 'react-native';
 //导入数据
-import ShareData from "../assets/shareData2.json";
 import RadiusButton from "./RadiusButton";
 //获取屏幕宽度
 let Dimensions = require("Dimensions");
@@ -23,13 +22,51 @@ let cellWH = 100;
 let vMargin = (width - cellWH * cols) / (cols + 1);
 let hMargin = 20;
 
+export const data = [
+    {
+        icon: require('../img/icon3.png'),
+        title: '播放视频',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon4.png'),
+        title: '阅读新闻',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon5.png'),
+        title: '通讯录',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon6.png'),
+        title: '转入',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon7.png'),
+        title: '转出',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon8.png'),
+        title: '买入',
+        "btn": "+10算力"
+    },
+    {
+        icon: require('../img/icon9.png'),
+        title: '卖出',
+        "btn": "+10算力"
+    },
+];
+
 export default class listViewComponent2 extends Component {
     constructor(props) {
         super(props);
         //1.设置数据源
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         //2.设置返回数据
-        this.state = {dataSource: ds.cloneWithRows(ShareData.data)};
+        this.state = {dataSource: ds.cloneWithRows(data)};
     }
 
     render() {
@@ -48,8 +85,8 @@ export default class listViewComponent2 extends Component {
                 this._onPress(rowData.title)
             }}>
                 <View style={styles.innerViewStyle}>
-                    <Image source={{uri: rowData.icon}} style={styles.iconStyle}/>
-                    <Text>{rowData.title}</Text>
+                    <Image source={rowData.icon} style={styles.iconStyle}/>
+                    <Text style={styles.textStyle}>{rowData.title}</Text>
                     <RadiusButton
                         btnName={rowData.btn}
                         textStyle={{
@@ -58,8 +95,8 @@ export default class listViewComponent2 extends Component {
                         }}
                         btnStyle={{
                             marginTop: 5,
-                            width: 75,
-                            height: 25,
+                            width: 70,
+                            height: 18,
                             borderRadius: 25,
                         }}
                         underlayColor='#4169e1'>
@@ -74,7 +111,7 @@ export default class listViewComponent2 extends Component {
             this.props.navigate('Video');
         } else if (e === '阅读新闻') {
             this.props.navigate('Movie');
-        }else if(e === '通讯录'){
+        } else if (e === '通讯录') {
             this.props.navigate('Contact');
         }
         else {
@@ -91,8 +128,9 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     iconStyle: {
-        width: 50,
-        height: 50,
+        margin: 6,
+        width: 35,
+        height: 35,
     },
     innerViewStyle: {
         width: cellWH,
@@ -100,6 +138,10 @@ const styles = StyleSheet.create({
         marginLeft: vMargin,
         marginTop: hMargin,
         alignItems: 'center',
+    },
+    textStyle: {
+        fontSize: 12,
+        color: 'gray'
     }
 });
 

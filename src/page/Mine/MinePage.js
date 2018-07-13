@@ -142,7 +142,7 @@ export default class MinePage extends Component {
                                               alert('设置')
                                           }}>
                             <Image source={require('../../img/setting.png')}
-                                   style={styles.headTopImg} resizeMode={'contain'}/>
+                                   style={styles.headTopImg}/>
                             <Text style={styles.headTopText}>设置</Text>
                         </TouchableOpacity>
                     </View>
@@ -350,6 +350,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     headTopImg: {
+        resizeMode: 'contain',
         width: 15,
         height: 15,
         marginRight: 5

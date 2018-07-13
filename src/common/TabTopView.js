@@ -47,6 +47,7 @@ export default class TabTopView extends Component {
     }
 
     _onPress() {
+        console.log(StatusBar.currentHeight);
         this.props.navigate('Movie');
     }
 }
@@ -54,7 +55,7 @@ export default class TabTopView extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20
+        marginTop: 24
     },
     lineStyle: {
         width: ScreenWidth / 4,
