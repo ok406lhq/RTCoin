@@ -9,7 +9,7 @@ import {
     View,
 } from 'react-native';
 
-import spinner from '../img/loading2.png';
+import spinner from '../img/loading2.gif';
 
 
 const Dimensions = require('Dimensions');

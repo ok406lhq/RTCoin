@@ -1,7 +1,6 @@
 import React from 'react';
 import {StackNavigator} from 'react-navigation';
 import {TabNav} from "./RootPage";
-import LoginPage from "./page/Login/loginPage";
 import RegPage from "./page/Login/regPage";
 import {FindAccountPage} from "./page/Login/findAccountPage"; // 路由导航
 import VideoScreen from "./page/Task/VideoScreen";
