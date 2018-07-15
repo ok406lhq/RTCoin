@@ -56,3 +56,6 @@
    <img width="280" height="497" src="https://github.com/ok406lhq/RTCoin/blob/c2934ac94fa37e45dfaf6d19e1bb373e4b1fe0d6/screenshots/splash.gif"/>
 </div>
 
+* 7.15更新
+######  解决Listview中数据源为json时，获取不了本地资源的问题，json数据中提供的url不能为本地资源的路径，否则会找不到资源解析，如果要获取本地资源，可以在js文件中export一个data对象，在data中存储本地资源的数据源，具体参考ListViewComponent.js
+
