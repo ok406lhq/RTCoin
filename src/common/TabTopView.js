@@ -17,7 +17,7 @@ const defaultTabColor = '#949494';
 const Dimensions = require('Dimensions');
 const ScreenWidth = Dimensions.get('window').width;
 
-const apiurls = {
+const api = {
     web: 'http://www.qiandu.com/#/login',
 };
 
@@ -50,11 +50,10 @@ export default class TabTopView extends Component {
         );
     }
 
-    _onPress = (gourl = apiurls.web) => {
+    _onPress = (url = api.web) => {
         // console.log(StatusBar.currentHeight);
-        // this.props.navigate('Web');
         this.props.navigate('Web', {
-            url: gourl
+            url: url
         });
     }
 }

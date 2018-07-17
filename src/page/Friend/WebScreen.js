@@ -14,6 +14,7 @@ export default class WebScreen extends Component {
         header: null
     };
 
+    //Back键监听
     componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
     }
@@ -28,13 +29,10 @@ export default class WebScreen extends Component {
     };
 
     render() {
-        const {navigation} = this.props
-        const {url, userAgent = "Web/"} = navigation.state.params
+        const {navigation} = this.props;
+        const {url, userAgent = "Web/"} = navigation.state.params;
         return (
             <WebView
-                ref={ref => {
-                    this.webview = ref
-                }}
                 style={styles.webStyle}
                 source={{uri: url}}
                 userAgent={userAgent}
@@ -47,7 +45,7 @@ export default class WebScreen extends Component {
     }
 
     loading = () => {
-        return <ActivityIndicator style={styles.webview} size="small" color="#aa00aa"/>
+        return <ActivityIndicator style={styles.webStyle} size="small" color="#aa00aa"/>
     }
 
 }

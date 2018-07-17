@@ -5,7 +5,7 @@ import {
     Text,
     Animated,
     Easing,
-    Image,
+    ActivityIndicator,
     View,
 } from 'react-native';
 
@@ -78,7 +78,7 @@ export default class ButtonSubmit extends Component {
                         onPress={this._onPress}
                         activeOpacity={1}>
                         {this.state.isLoading ? (
-                            <Image source={spinner} style={styles.image}/>
+                            <ActivityIndicator style={styles.button} size="small" color="#EF0B53"/>
                         ) : (
                             <Text style={styles.text}>登录</Text>
                         )}
