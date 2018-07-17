@@ -17,6 +17,10 @@ const defaultTabColor = '#949494';
 const Dimensions = require('Dimensions');
 const ScreenWidth = Dimensions.get('window').width;
 
+const apiurls = {
+    web: 'http://www.qiandu.com/#/login',
+};
+
 export default class TabTopView extends Component {
     render() {
         return (
@@ -38,7 +42,7 @@ export default class TabTopView extends Component {
 
                     <Text style={styles.textStyle} tabLabel='关注' onPress={() => {
                         this._onPress();
-                    }}>关注</Text>
+                    }}>跳转到Web</Text>
                     <Text style={styles.textStyle} tabLabel='粉丝'>粉丝</Text>
                     <Text style={styles.textStyle} tabLabel='推荐'>推荐</Text>
                 </ScrollableTabView>
@@ -46,16 +50,19 @@ export default class TabTopView extends Component {
         );
     }
 
-    _onPress() {
-        console.log(StatusBar.currentHeight);
-        this.props.navigate('Movie');
+    _onPress = (gourl = apiurls.web) => {
+        // console.log(StatusBar.currentHeight);
+        // this.props.navigate('Web');
+        this.props.navigate('Web', {
+            url: gourl
+        });
     }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 24
+        marginTop: 20
     },
     lineStyle: {
         width: ScreenWidth / 4,

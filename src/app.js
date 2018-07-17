@@ -7,9 +7,11 @@ import VideoScreen from "./page/Task/VideoScreen";
 import ContactScreen from "./page/Task/ContactScreen";
 
 import MovieListScreen from "./page/Task/MovieListScreen";
-import LoginScreen from "./page/Login/LoginScreen"; // 本地存储全局对象
+import LoginScreen from "./page/Login/LoginScreen";
+import WebScreen from "./page/Friend/WebScreen"; // 本地存储全局对象
 
 const App = StackNavigator({
+        Web: {screen: WebScreen},
         Movie: {screen: MovieListScreen},
         Video: {screen: VideoScreen},
         Contact: {screen: ContactScreen},
