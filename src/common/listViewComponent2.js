@@ -39,6 +39,11 @@ export const data = [
         "btn": "+10算力"
     },
     {
+        icon: require('../img/icon56.png'),
+        title: '支付',
+        "btn": "+10算力"
+    },
+    {
         icon: require('../img/icon6.png'),
         title: '转入',
         "btn": "+10算力"
@@ -113,6 +118,8 @@ export default class listViewComponent2 extends Component {
             this.props.navigate('Movie');
         } else if (e === '通讯录') {
             this.props.navigate('Contact');
+        } else if (e === '支付') {
+            this.props.navigate('Pay');
         }
         else {
             alert(">>>点击 " + e);

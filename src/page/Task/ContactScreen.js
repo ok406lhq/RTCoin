@@ -8,7 +8,7 @@ import {
     Text,
     StyleSheet,
     View,
-    ToastAndroid
+    Alert
 } from 'react-native';
 import ContactPickerBridge from 'react-native-contacts-picker';
 
@@ -23,11 +23,11 @@ export default class ContactScreen extends Component {
         );
     }
 
-
     openContactPicker = () => {
         ContactPickerBridge.openContactPicker((result) => {
             console.log('openContactPicker ---->', JSON.stringify(result));
-            console.log(result.data.name + "---" + result.data.phone);
+            console.log(result.data.name + "：" + result.data.phone);
+            Alert.alert('选择的联系人和电话号码', result.data.name + "：" + result.data.phone);
         });
     };
 

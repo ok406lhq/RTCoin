@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
 import {
-    View,
-    Text,
     Image,
     StyleSheet,
     BackHandler,
-    ActivityIndicator,
     ToastAndroid,
-    FlatList
+    WebView,
+    ActivityIndicator
 } from 'react-native';
-import {comingMovies, queryMovies} from "../../common/Service";
-import MovieItemCell from "../../widget/MovieItemCell";
 
 export default class HomePage extends Component {
-
     static navigationOptions = {
         tabBarLabel: '首页',
         tabBarIcon: ({focused}) => {
@@ -48,162 +43,33 @@ export default class HomePage extends Component {
         return true;
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            movieList: [],  // 电影列表的数据源
-            loaded: false,  // 用来控制loading视图的显示，当数据加载完成，loading视图不再显示
-        };
-    }
-
-    componentDidMount() {
-        /// 根据routeName来判断当前是哪个界面，react-navigation中可以通过navigation.state.routeName来获取
-        let routeName = this.props.navigation.state.routeName;
-        if (routeName === 'First') {
-            this.loadDisplayingMovies();
-        } else {
-            this.loadComingMovies();
-        }
-    }
-
     render() {
-        if (!this.state.loaded) {
-            return (
-                <View style={styles.loadingView}>
-                    <ActivityIndicator animating={true} size="small"/>
-                    <Text style={{color: '#666666', paddingLeft: 10}}>努力加载中</Text>
-                </View>
-            )
-        }
         return (
-                <FlatList
-                    data={this.state.movieList}
-                    renderItem={this._renderItem}
-                    keyExtractor={(item) => item.id}
-                />
-        )
+            <WebView
+                style={styles.container}
+                // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
+                source={{uri: 'https://www.csdn.net/'}}
+                startInLoadingState
+                renderLoading={() => {
+                    return this.loading()
+                }}
+            />
+        );
     }
 
-    _renderItem = (item) => {
-        return (
-            <MovieItemCell movie={item.item} onPress={() => {
-                console.log('点击了电影----' + item.item.title);
-            }}/>
-        )
-    };
-
-    /**
-     * 加载正在上映的电影列表，此处默认城市为北京，取20条数据显示
-     */
-    loadDisplayingMovies() {
-        let that = this;
-        fetch(queryMovies('北京', 0, 20)).then((response) => response.json()).then((json) => {
-            console.log(json);
-            let movies = [];
-            for (let idx in json.subjects) {
-                let movieItem = json.subjects[idx];
-                let directors = ""; // 导演
-                for (let index in movieItem.directors) {
-                    // 得到每一条电影的数据
-                    let director = movieItem.directors[index];
-                    // 将多个导演的名字用空格分隔开显示
-                    if (directors === "") {
-                        directors = directors + director.name
-                    } else {
-                        directors = directors + " " + director.name
-                    }
-                }
-                movieItem["directorNames"] = directors;
-
-                // 拼装主演的演员名字，多个名字用空格分隔显示
-                let actors = "";
-                for (let index in movieItem.casts) {
-                    let actor = movieItem.casts[index];
-                    if (actors === "") {
-                        actors = actors + actor.name
-                    } else {
-                        actors = actors + " " + actor.name
-                    }
-                }
-                movieItem["actorNames"] = actors;
-                movies.push(movieItem)
-            }
-            that.setState({
-                movieList: movies,
-                loaded: true
-            })
-        }).catch((e) => {
-            console.log("加载失败");
-            that.setState({
-                loaded: true
-            })
-        }).done();
+    loading = () => {
+        return <ActivityIndicator style={styles.flash} size='small' color='#aa00aa'/>
     }
 
-    /**
-     * 加载即将上映的电影列表，此处默认城市为北京，取20条数据显示
-     */
-    loadComingMovies() {
-        let that = this;
-        fetch(comingMovies('北京', 0, 20)).then((response) => response.json()).then((json) => {
-            console.log(json);
-            if (json == null) {
-                that.setState({
-                    loaded: true,
-                });
-                return
-            }
-            let movies = [];
-            for (let idx in json.subjects) {
-                let movieItem = json.subjects[idx];
-                let directors = "";
-                for (let index in movieItem.directors) {
-                    let director = movieItem.directors[index];
-                    if (directors === "") {
-                        directors = directors + director.name
-                    } else {
-                        directors = directors + " " + director.name
-                    }
-                }
-                movieItem["directorNames"] = directors;
-
-                let actors = "";
-                for (let index in movieItem.casts) {
-                    let actor = movieItem.casts[index];
-                    if (actors === "") {
-                        actors = actors + actor.name
-                    } else {
-                        actors = actors + " " + actor.name
-                    }
-                }
-                movieItem["actorNames"] = actors;
-                movies.push(movieItem)
-            }
-            that.setState({
-                movieList: movies,
-                loaded: true,
-            })
-        }).catch((error) => {
-            console.log("加载失败");
-            that.setState({
-                loaded: true
-            })
-        }).done();
-    }
 }
 const styles = StyleSheet.create({
-    loadingView: {
+    container: {
+        marginTop: 20
+    },
+    flash: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10
-    },
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     tabBarIcon: {
         width: 25,

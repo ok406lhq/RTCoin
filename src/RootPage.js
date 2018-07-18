@@ -2,7 +2,6 @@ import React from 'react';
 import {TabNavigator} from 'react-navigation';
 
 import HomePage from './page/Home/HomePage';
-import FriendPage from './page/Friend/FriendPage';
 import TaskPage from './page/Task/TaskPage';
 import MinePage from './page/Mine/MinePage';
 import DealPage from './page/Deal/DealPage';
@@ -14,9 +13,6 @@ export const TabNav = TabNavigator(
         },
         Task: {
             screen: TaskPage,
-        },
-        Friend: {
-            screen: FriendPage,
         },
         Deal: {
             screen: DealPage,
