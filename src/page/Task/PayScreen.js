@@ -7,10 +7,17 @@ import {
     StyleSheet,
     View,
     ScrollView,
-    Text, ListView,
-    TouchableOpacity, Image
+    Text,
+    ListView,
+    Image,
+    StatusBar
 } from 'react-native';
+import QuickEntry from "../../common/QuickEntry";
+import ListViewComponent3 from "../../common/ListViewComponent3";
+import Banner from "../../common/Banner";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
+const statusBarH = StatusBar.currentHeight;
 //获取屏幕宽度
 let Dimensions = require("Dimensions");
 let {width} = Dimensions.get('window');
@@ -55,19 +62,6 @@ export const data = [
         image: require('../../assets/images/iconfont-mayijubao-copy.png'),
     },
     {
-        title: '蚂蚁花呗',
-        image: require('../../assets/images/iconfont-huabei.png'),
-    },
-    {
-        title: '服务窗',
-        image: require('../../assets/images/iconfont-fuwuchuang.png'),
-    },
-
-    {
-        title: '股票',
-        image: require('../../assets/images/iconfont-gupiao.png'),
-    },
-    {
         title: '世界那么大',
         image: require('../../assets/images/iconfont-chanpinfenleishijie.png'),
     },
@@ -101,7 +95,12 @@ export const data = [
         image: require('../../assets/images/iconfont-licaixiaogongju.png'),
     },
 ];
+
 export default class PayScreen extends Component {
+    static navigationOptions = {
+        header: null,
+    }
+
     constructor(props) {
         super(props);
         //1.设置数据源
@@ -114,14 +113,29 @@ export default class PayScreen extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
+                <View style={styles.container2}>
+                    <Icon.Button name={'arrow-back'} size={30} color={'#fff'}
+                                 backgroundColor={'#1E82D2'} onPress={() => {
+                        this.props.navigation.goBack();
+                    }}/>
+                    <Text style={styles.textStyle2}>支付</Text>
+                    <Icon name={'add'} size={30} color={'#fff'}/>
+                </View>
+                <QuickEntry/>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow}
                     contentContainerStyle={styles.listViewStyle}/>
+                <Banner/>
+                <ListViewComponent3/>
             </ScrollView>
         );
     }
 
+    //
+    // _onPress = () => {
+    //     this.props.navigation.goBack();
+    // }
 
     _renderRow = (rowData, sectionID, rowID, highlightRow) => {
         {
@@ -139,6 +153,19 @@ const styles = StyleSheet.create({
             flex: 1,
             backgroundColor: '#F5F5F9',
         },
+        container2: {
+            marginTop: statusBarH,
+            height: 50,
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            backgroundColor: '#1E82D2'
+        },
+        textStyle2: {
+            fontSize: 20,
+            color: '#fff'
+        },
+
         // ‘支付宝’ 首页九宫格
         scrollContainerApp: {
             backgroundColor: '#F5F5F9',
@@ -163,7 +190,6 @@ const styles = StyleSheet.create({
             alignItems: 'center',
         },
         textStyle: {
-            borderColor: '#000',
             fontSize: 12,
             color: 'gray'
         }

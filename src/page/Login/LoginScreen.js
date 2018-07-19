@@ -4,8 +4,6 @@ import Form from '../../common/Form';
 import Wallpaper from '../../common/Wallpaper';
 import ButtonSubmit from '../../common/ButtonSubmit';
 import SignupSection from '../../common/SignupSection';
-import StatusBar from "react-native";
-
 
 export default class LoginScreen extends Component {
     static navigationOptions = {

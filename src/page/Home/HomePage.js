@@ -5,8 +5,10 @@ import {
     BackHandler,
     ToastAndroid,
     WebView,
-    ActivityIndicator
+    ActivityIndicator, StatusBar
 } from 'react-native';
+
+const currentHeight = StatusBar.currentHeight;
 
 export default class HomePage extends Component {
     static navigationOptions = {
@@ -64,7 +66,7 @@ export default class HomePage extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20
+        marginTop: currentHeight
     },
     flash: {
         flex: 1,
