@@ -5,7 +5,9 @@ import {
     BackHandler,
     ToastAndroid,
     WebView,
-    ActivityIndicator, StatusBar
+    View,
+    ActivityIndicator,
+    StatusBar
 } from 'react-native';
 
 const currentHeight = StatusBar.currentHeight;
@@ -47,15 +49,15 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <WebView
-                style={styles.container}
-                // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
-                source={{uri: 'https://www.csdn.net/'}}
-                startInLoadingState
-                renderLoading={() => {
-                    return this.loading()
-                }}
-            />
+                <WebView
+                    style={styles.container}
+                    // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
+                    source={{uri: 'https://wechat-game.gxd88.cn/?v=1.1'}}
+                    startInLoadingState
+                    renderLoading={() => {
+                        return this.loading()
+                    }}
+                />
         );
     }
 

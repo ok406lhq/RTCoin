@@ -16,6 +16,7 @@ import QuickEntry from "../../common/QuickEntry";
 import ListViewComponent3 from "../../common/ListViewComponent3";
 import Banner from "../../common/Banner";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import NavBar from "../../common/NavBar";
 
 const statusBarH = StatusBar.currentHeight;
 //获取屏幕宽度
@@ -113,14 +114,14 @@ export default class PayScreen extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                <View style={styles.container2}>
-                    <Icon.Button name={'arrow-back'} size={30} color={'#fff'}
-                                 backgroundColor={'#1E82D2'} onPress={() => {
-                        this.props.navigation.goBack();
-                    }}/>
-                    <Text style={styles.textStyle2}>支付</Text>
-                    <Icon name={'add'} size={30} color={'#fff'}/>
-                </View>
+                <View style={styles.sBar} backgroundColor={'#1E82D2'}/>
+                <NavBar
+                    title="支付"
+                    leftIcon="ios-arrow-back"
+                    leftPress={this.leftPress.bind(this)}
+                    rightIcon="ios-settings-outline"
+                    rightPress={this.rightPress.bind(this)}
+                />
                 <QuickEntry/>
                 <ListView
                     dataSource={this.state.dataSource}
@@ -131,6 +132,13 @@ export default class PayScreen extends Component {
             </ScrollView>
         );
     }
+
+    leftPress = () => {
+        this.props.navigation.goBack();
+    };
+    rightPress = () => {
+
+    };
 
     //
     // _onPress = () => {
@@ -152,6 +160,10 @@ const styles = StyleSheet.create({
         container: {
             flex: 1,
             backgroundColor: '#F5F5F9',
+        },
+        sBar: {
+            height: statusBarH,
+            width: width
         },
         container2: {
             marginTop: statusBarH,

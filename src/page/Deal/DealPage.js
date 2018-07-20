@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {
     View,
-    Text,
+    StatusBar,
     Image,
     StyleSheet,
 } from 'react-native';
@@ -19,12 +19,20 @@ export default class DealPage extends Component {
                 <Image style={styles.tabBarIcon} source={require('../../img/deal_nor.png')}/>
             );
         },
+
     };
 
     render() {
         return (
             <View style={styles.container}>
-                <Image style={{flex: 1}} resizeMode={'contain'} source={require('../../img/unnotes.png')}/>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
+                <Image style={{flex: 1}} resizeMode={'contain'}
+                       source={require('../../img/unnotes.png')}/>
             </View>
         );
     }
@@ -37,8 +45,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     tabBarIcon: {
-        width: 25,
-        height: 25,
+        width: 22,
+        height: 22,
     }
 });
 

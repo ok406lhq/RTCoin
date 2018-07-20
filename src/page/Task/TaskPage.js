@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {
-    View,
     Text,
     Image,
     StyleSheet,
@@ -29,6 +28,12 @@ export default class TaskPage extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
                 <SwiperComponent/>
                 <Text style={styles.textStyle}>基础任务</Text>
                 <ListViewComponent/>
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     tabBarIcon: {
-        width: 19,
-        height: 19,
+        width: 17,
+        height: 17,
     }
 });
