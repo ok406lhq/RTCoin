@@ -203,9 +203,9 @@ export default class MinePage extends Component {
                         <View>
                             {this._renderListItem()}
                         </View>
-                    </View>
-                    <View>
-                        <CButton title={'注销'} onPress={() => this.logout()}/>
+                        <View margin={px2dp(15)}>
+                            <CButton title={'注销'} onPress={() => this.logout()}/>
+                        </View>
                     </View>
                 </ScrollView>
             </View>
@@ -218,7 +218,7 @@ export default class MinePage extends Component {
 }
 const styles = StyleSheet.create({
     scrollView: {
-        marginBottom: px2dp(10),
+        marginBottom: px2dp(5),
         backgroundColor: "#1E82D2"
     },
     sBar: {
