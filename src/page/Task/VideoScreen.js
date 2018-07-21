@@ -144,7 +144,7 @@ export default class VideoScreen extends Component {
                             this.video = ref
                         }}
                         /* For ExoPlayer */
-                        source={require('../../assets/background2.mp4')}
+                        source={require('../../assets/background.mp4')}
                         style={styles.fullScreen}
                         rate={this.state.rate}
                         paused={this.state.paused}

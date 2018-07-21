@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     },
     tabBarIcon: {
         width: 20,
-        height: 20
+        height: 19
     },
     quitContainer: {
         flex: 1,
