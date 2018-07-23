@@ -58,4 +58,6 @@
 
 * 7.15更新
 ######  解决Listview中数据源为json时，获取不了本地资源的问题，json数据中提供的url不能为本地资源的路径，否则会找不到资源解析，如果要获取本地资源，可以在js文件中export一个data对象，在data中存储本地资源的数据源，具体参考ListViewComponent.js
+* 7.20更新
+######  重新设计了“我的”界面，以至于不再那么土了:laughing::laughing::laughing:然后就是继续优化UI界面~
 
