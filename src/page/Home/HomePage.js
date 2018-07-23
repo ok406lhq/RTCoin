@@ -49,15 +49,15 @@ export default class HomePage extends Component {
 
     render() {
         return (
-                <WebView
-                    style={styles.container}
-                    // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
-                    source={{uri: 'https://wechat-game.gxd88.cn/?v=1.1'}}
-                    startInLoadingState
-                    renderLoading={() => {
-                        return this.loading()
-                    }}
-                />
+            <WebView
+                style={styles.container}
+                // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
+                source={{uri: 'https://wechat-game.gxd88.cn/?v=1.1'}}
+                startInLoadingState
+                renderLoading={() => {
+                    return this.loading()
+                }}
+            />
         );
     }
 
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     tabBarIcon: {
-        width: 25,
-        height: 25,
+        width: 22,
+        height: 21,
     }
 });

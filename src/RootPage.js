@@ -50,6 +50,9 @@ export const TabNav = TabNavigator(
                 fontSize: 11,
                 margin: 1
             },
+            tabStyle: {
+                height: 45
+            },
             //tab 页指示符的样式 (tab页下面的一条线).
             indicatorStyle: {height: 0},
         },

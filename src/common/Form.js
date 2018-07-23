@@ -2,15 +2,11 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     KeyboardAvoidingView,
-    View,
-    ActivityIndicator,
     TouchableOpacity,
     Image,
 } from 'react-native';
 
 import UserInput from './UserInput';
-import ButtonSubmit from './ButtonSubmit';
-import SignupSection from './SignupSection';
 
 import usernameImg from '../img/username.png';
 import passwordImg from '../img/password.png';
