@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, FlatList, Text, ActivityIndicator, StyleSheet, BackHandler} from 'react-native';
-import {queryMovies, comingMovies} from '../../common/Service';
+import {queryMovies, comingMovies} from '../../utils/apiUtils';
 import MovieItemCell from "../../widget/MovieItemCell";
 
 export default class MovieListScreen extends Component {

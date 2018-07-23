@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     tabBarIcon: {
-        width: 17,
-        height: 17,
+        width: 19,
+        height: 19,
     }
 });

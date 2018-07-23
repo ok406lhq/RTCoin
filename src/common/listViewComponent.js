@@ -63,7 +63,7 @@ export default class listViewComponent extends Component {
                     <RadiusButton
                         btnName={rowData.btn}
                         textStyle={{
-                            fontSize: 12,
+                            fontSize: 10,
                             color: '#ffffff',
                         }}
                         btnStyle={{
@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
     },
     iconStyle: {
         margin: 6,
-        width: 35,
-        height: 35,
+        width: 25,
+        height: 25,
     },
     innerViewStyle: {
         width: cellWH,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textStyle: {
-        fontSize: 12,
+        fontSize: 8,
         color: 'gray'
     }
 });

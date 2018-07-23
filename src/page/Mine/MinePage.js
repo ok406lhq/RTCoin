@@ -58,7 +58,7 @@ export default class MinePage extends Component {
     }
 
     rightPress() {
-
+        this.props.navigation.navigate('UserProfile');
     }
 
     goProfile() {
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     tabBarIcon: {
-        width: 20,
+        width: 19,
         height: 19
     },
     quitContainer: {
