@@ -60,4 +60,15 @@
 ######  解决Listview中数据源为json时，获取不了本地资源的问题，json数据中提供的url不能为本地资源的路径，否则会找不到资源解析，如果要获取本地资源，可以在js文件中export一个data对象，在data中存储本地资源的数据源，具体参考ListViewComponent.js
 * 7.20更新
 ######  重新设计了“我的”界面，以至于不再那么土了:laughing::laughing::laughing:然后就是继续优化UI界面~
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/15.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/13.jpg"/>
+  </div>
 
+* 7.24更新
+######  交易界面中应用了[react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper)这个图表库，这个第三方图形库图形很全面，功能很强大，可以实现缩放，还有一些有趣的动画效果~
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/wuxudong/react-native-charts-wrapper/master/screenshot/Android%20ScreenShot.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/14.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/screen_video.gif"/>
+</div>
