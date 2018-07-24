@@ -136,8 +136,8 @@ const styles = StyleSheet.create({
     },
     iconStyle: {
         margin: 6,
-        width: 25,
-        height: 25,
+        width: 32,
+        height: 32,
     },
     innerViewStyle: {
         width: cellWH,

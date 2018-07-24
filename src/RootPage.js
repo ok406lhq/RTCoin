@@ -59,7 +59,7 @@ export const TabNav = TabNavigator(
         //tab bar的位置, 可选值： 'top' or 'bottom'
         tabBarPosition: 'bottom',
         //是否允许滑动切换tab页
-        swipeEnabled: true,
+        swipeEnabled: false,
         //是否在切换tab页时使用动画
         animationEnabled: false,
         //是否懒加载

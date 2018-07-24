@@ -9,8 +9,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "immutability-helper": "^2.7.1",
+    "lodash": "^4.17.10",
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-charts-wrapper": "^0.4.3",
     "react-native-contacts-picker": "0.0.7",
     "react-native-deprecated-custom-components": "^0.1.2",
     "react-native-scrollable-tab-view": "^0.8.0",
