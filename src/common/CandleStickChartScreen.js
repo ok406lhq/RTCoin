@@ -161,7 +161,7 @@ export default class CandleStickChartScreen extends React.Component {
     render() {
         return (
 
-            <View style={{height: 300}}>
+            <View style={{height: 270}}>
                 <View style={styles.container}>
                     <CandleStickChart
                         style={styles.chart}

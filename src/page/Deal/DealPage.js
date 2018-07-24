@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import CandleStickChartScreen from "../../common/CandleStickChartScreen";
 import LineChartScreen from "../../common/LineChartGradientScreen";
+import NavBar from "../../common/NavBar";
 
 const {width} = Dimensions.get('window');
 export default class DealPage extends Component {
@@ -36,9 +37,11 @@ export default class DealPage extends Component {
                     backgroundColor={"#73808080"}
                     barStyle={"light-content"}
                 />
-                <View style={styles.sBar} backgroundColor={'#1E82D2'}>
-                    <Text style={styles.textStyle}>剩余金额：0.000</Text>
-                </View>
+                <View style={styles.sBar} backgroundColor={'#1E82D2'}/>
+                <NavBar
+                    style={styles.titleStyle}
+                    title="剩余金额：425.167(B)"
+                />
                 <CandleStickChartScreen/>
                 <Text style={styles.text}>深度图</Text>
                 <LineChartScreen/>
@@ -56,6 +59,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    titleStyle: {
+        fontSize: 15,
+    },
     imgStyle: {
         alignSelf: 'center',
         width: 150,
@@ -67,14 +73,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
         color: '#1E82D2'
     },
-    textStyle: {
-        fontWeight: 'bold',
-        fontSize: 12,
-        color: '#fff',
-        paddingTop: 27,
-        flexDirection: 'row',
-        alignSelf: 'center'
-    },
+
     textStyle2: {
         fontSize: 12,
         color: 'grey',
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     sBar: {
-        height: StatusBar.currentHeight * 2,
+        height: StatusBar.currentHeight,
         width: width
     },
     tabBarIcon: {

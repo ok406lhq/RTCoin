@@ -34,7 +34,7 @@ export default class LineChartScreen extends React.Component {
 
     render() {
         return (
-            <View style={{height: 200}}>
+            <View style={{height: 190}}>
                 <View style={styles.container}>
                     <LineChart
                         style={styles.chart}
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
     chart: {
-        height: 250
+        height: 200
     }
 });
 
