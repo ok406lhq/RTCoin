@@ -34,9 +34,10 @@ export default class MovieListScreen extends Component {
         /// 根据routeName来判断当前是哪个界面，react-navigation中可以通过navigation.state.routeName来获取
         let routeName = this.props.navigation.state.routeName;
         if (routeName === 'First') {
-            this.loadDisplayingMovies();
-        } else {
             this.loadComingMovies();
+
+        } else {
+            this.loadDisplayingMovies();
         }
     }
 
@@ -67,11 +68,11 @@ export default class MovieListScreen extends Component {
     };
 
     /**
-     * 加载正在上映的电影列表，此处默认城市为北京，取20条数据显示
+     * 加载正在上映的电影列表，此处默认城市为深圳，取30条数据显示
      */
     loadDisplayingMovies() {
         let that = this;
-        fetch(queryMovies('北京', 0, 20)).then((response) => response.json()).then((json) => {
+        fetch(queryMovies('深圳', 0, 30)).then((response) => response.json()).then((json) => {
             console.log(json);
             let movies = [];
             for (let idx in json.subjects) {

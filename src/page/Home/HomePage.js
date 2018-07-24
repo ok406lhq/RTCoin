@@ -52,7 +52,7 @@ export default class HomePage extends Component {
             <WebView
                 style={styles.container}
                 // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
-                source={{uri: 'https://wechat-game.gxd88.cn/?v=1.1'}}
+                source={{uri: 'https://github.com/ok406lhq'}}
                 startInLoadingState
                 renderLoading={() => {
                     return this.loading()
