@@ -58,7 +58,7 @@ export default class MinePage extends Component {
     }
 
     rightPress() {
-        this.props.navigation.navigate('UserProfile');
+        this.props.navigation.navigate('Setting');
     }
 
     goProfile() {
@@ -202,9 +202,6 @@ export default class MinePage extends Component {
                         </View>
                         <View>
                             {this._renderListItem()}
-                        </View>
-                        <View margin={px2dp(15)}>
-                            <CButton title={'注销'} onPress={() => this.logout()}/>
                         </View>
                     </View>
                 </ScrollView>
