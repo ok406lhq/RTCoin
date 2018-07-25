@@ -24,6 +24,7 @@
 <div align="center">
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/6.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/8.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/16.png"/>
   </div>
 
 ###### 参照 [如何让你的 React Native 应用在键盘弹出时优雅地响应](https://github.com/rccoder/blog/issues/25),用KeyboardAvoidingView解决了:点击文本输入框时，键盘会弹出并且遮盖住输入框的问题：
