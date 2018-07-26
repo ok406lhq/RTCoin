@@ -30,7 +30,7 @@ export default class DealPage extends Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
+            <View style={styles.container}>
                 <StatusBar
                     translucent={true}
                     animated={true}
@@ -42,16 +42,18 @@ export default class DealPage extends Component {
                     style={styles.titleStyle}
                     title="剩余金额：425.167(B)"
                 />
-                <CandleStickChartScreen/>
-                <Text style={styles.text}>深度图</Text>
-                <LineChartScreen/>
-                <View backgroundColor={'#fff'} style={{height: 300, width: width}}>
-                    <Text style={styles.textStyle2}>暂无数据</Text>
-                    <Image
-                        style={styles.imgStyle}
-                        source={require('../../img/unnotes.png')}/>
-                </View>
-            </ScrollView>
+                <ScrollView style={styles.container}>
+                    <CandleStickChartScreen/>
+                    <Text style={styles.text}>深度图</Text>
+                    <LineChartScreen/>
+                    <View backgroundColor={'#fff'} style={{height: 300, width: width}}>
+                        <Text style={styles.textStyle2}>暂无数据</Text>
+                        <Image
+                            style={styles.imgStyle}
+                            source={require('../../img/unnotes.png')}/>
+                    </View>
+                </ScrollView>
+            </View>
         );
     }
 }

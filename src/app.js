@@ -11,6 +11,8 @@ import MovieListScreen from "./page/Task/MovieListScreen";
 import LoginScreen from "./page/Login/LoginScreen";
 import UserProfile from "./page/Mine/UserProfile";
 import SettingScreen from "./page/Mine/SettingScreen";
+import NewsListScreen from "./page/Task/NewsListScreen";
+import DetailListScreen from "./page/Task/DetailListScreen";
 // import WebScreen from "./page/Friend/WebScreen"; // 本地存储全局对象
 
 const App = StackNavigator({
@@ -18,6 +20,8 @@ const App = StackNavigator({
         Setting: {screen: SettingScreen},
         UserProfile: {screen: UserProfile},
         Movie: {screen: MovieListScreen},
+        Detail: {screen: DetailListScreen},
+        News: {screen: NewsListScreen},
         Video: {screen: VideoScreen},
         Contact: {screen: ContactScreen},
         Pay: {screen: PayScreen},

@@ -115,7 +115,8 @@ export default class listViewComponent2 extends Component {
         if (e === '播放视频') {
             this.props.navigate('Video');
         } else if (e === '阅读新闻') {
-            this.props.navigate('Movie');
+            // this.props.navigate('Movie');
+            this.props.navigate('News');
         } else if (e === '通讯录') {
             this.props.navigate('Contact');
         } else if (e === '支付') {
