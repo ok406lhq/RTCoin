@@ -15,6 +15,7 @@ const currentHeight = StatusBar.currentHeight;
 export default class HomePage extends Component {
     static navigationOptions = {
         tabBarLabel: '首页',
+        header: null,
         tabBarIcon: ({focused}) => {
             if (focused) {
                 return (
@@ -49,15 +50,22 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <WebView
-                style={styles.container}
-                // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
-                source={{uri: 'https://github.com/ok406lhq'}}
-                startInLoadingState
-                renderLoading={() => {
-                    return this.loading()
-                }}
-            />
+            <View style={{flex: 1}}>
+                <StatusBar
+                    translucent={false}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
+                <WebView
+                    // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
+                    source={{uri: 'https://github.com/ok406lhq'}}
+                    startInLoadingState
+                    renderLoading={() => {
+                        return this.loading()
+                    }}
+                />
+            </View>
         );
     }
 

@@ -14,11 +14,14 @@ import {
     Dimensions,
     Image,
     TouchableHighlight,
-    Button,
     FlatList,
-    RefreshControl, BackHandler,
+    BackHandler,
+    StatusBar, Platform,
 } from 'react-native';
 
+const {width} = Dimensions.get('window');
+import NavBar from "../../common/NavBar";
+import px2dp from "../../utils/px2dp";
 // ItemSeparatorComponent：分割线组件，
 // ListFooterComponent：结尾组件
 // ListHeaderComponent：头组件
@@ -40,7 +43,7 @@ var ITEM_HEIGHT = 100;
 export default class NewsListScreen extends Component {
 
     static navigationOptions = {
-        header: null,
+        header: null
     }
     _flatList;
     // navigation;
@@ -204,6 +207,18 @@ export default class NewsListScreen extends Component {
             <View style={{flex: 1}}>
 
                 <View style={{flex: 1}}>
+                    <StatusBar
+                        translucent={true}
+                        animated={true}
+                        backgroundColor={"#73808080"}
+                        barStyle={"light-content"}
+                    />
+                    <View style={styles.sBar} backgroundColor={'#fff'}/>
+                    <NavBar
+                        title="新闻"
+                        titleStyle={styles.titleStyle}
+                        style={styles.topbar}
+                    />
                     <FlatList
                         ref={(flatList) => this._flatList = flatList}
                         ListHeaderComponent={this._header}
@@ -271,5 +286,23 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
         color: 'white',
         fontSize: 30,
+    },
+    sBar: {
+        height: StatusBar.currentHeight,
+        width: width
+    },
+    topbar: {
+        height: NavBar.topbarHeight,
+        backgroundColor: "#fff",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingTop: (Platform.OS === 'ios') ? 20 : 0,
+        paddingHorizontal: px2dp(10)
+    },
+    titleStyle: {
+        fontSize: 16,
+        color: '#000',
+        fontWeight: "bold",
     }
 });
