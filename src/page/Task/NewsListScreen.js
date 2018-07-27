@@ -22,6 +22,7 @@ import {
 const {width} = Dimensions.get('window');
 import NavBar from "../../common/NavBar";
 import px2dp from "../../utils/px2dp";
+import {newsUrl} from "../../utils/apiUtils";
 // ItemSeparatorComponent：分割线组件，
 // ListFooterComponent：结尾组件
 // ListHeaderComponent：头组件
@@ -38,13 +39,11 @@ import px2dp from "../../utils/px2dp";
 // scrollToIndexparams: {animated?: ?boolean, index: number, viewPosition?: number}：滚动到制定的位置
 // scrollToOffset(params: {animated?: ?boolean, offset: number})：滚动到指定的偏移的位置。
 
-var ITEM_HEIGHT = 100;
-
 export default class NewsListScreen extends Component {
 
     static navigationOptions = {
         header: null
-    }
+    };
     _flatList;
     // navigation;
     // self.navigationOptions = {
@@ -95,18 +94,18 @@ export default class NewsListScreen extends Component {
             clearTimeout(timer)
             this.getListData()
         }, 1000)
-    }
+    };
 
     onload() {
         let timer = setTimeout(() => {
-            clearTimeout(timer)
+            clearTimeout(timer);
             alert('加载成功')
         })
     }
 
     getListData() {
         jsCallNative.loading()
-        fetch('https://v.juhe.cn/toutiao/index?key=1a52343f75501c9e0988e66bcb45d58e').then((response) => response.json()).then((json) => {
+        fetch(newsUrl).then((response) => response.json()).then((json) => {
             let data = json.result.data;
             let dataBlob = [];
             let i = 0;
@@ -114,7 +113,7 @@ export default class NewsListScreen extends Component {
                 dataBlob.push({
                     key: i,
                     value: item,
-                })
+                });
                 i++;
             });
             this.setState({
@@ -217,7 +216,7 @@ export default class NewsListScreen extends Component {
                     <NavBar
                         title="新闻"
                         titleStyle={styles.titleStyle}
-                        style={styles.topbar}
+                        style={styles.style}
                     />
                     <FlatList
                         ref={(flatList) => this._flatList = flatList}
@@ -291,7 +290,7 @@ const styles = StyleSheet.create({
         height: StatusBar.currentHeight,
         width: width
     },
-    topbar: {
+    style: {
         height: NavBar.topbarHeight,
         backgroundColor: "#fff",
         flexDirection: 'row',

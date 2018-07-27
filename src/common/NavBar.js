@@ -1,8 +1,7 @@
 /**
  * @author lam
- * @repo https://github.com/stoneWeb/elm-react-native
+ * @data 2018/7/26 14:16
  */
-'use strict';
 
 import React, {
     Component,
