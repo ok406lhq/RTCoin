@@ -66,4 +66,5 @@ export const TabNav = TabNavigator(
         lazy: true,
         //返回按钮是否会导致tab切换到初始tab页？ 如果是，则设置为initialRoute，否则为none。 缺省为initialRoute。
         backBehavior: 'none',
+        initialRouteName: 'Home',
     });
