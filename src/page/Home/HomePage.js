@@ -52,7 +52,7 @@ export default class HomePage extends Component {
         return (
             <View style={{flex: 1}}>
                 <StatusBar
-                    translucent={false}
+                    translucent={true}
                     animated={true}
                     backgroundColor={"#73808080"}
                     barStyle={"light-content"}
