@@ -22,6 +22,7 @@ import {
 const {width} = Dimensions.get('window');
 import NavBar from "../../common/NavBar";
 import px2dp from "../../utils/px2dp";
+import {newsUrl} from "../../utils/apiUtils";
 // ItemSeparatorComponent：分割线组件，
 // ListFooterComponent：结尾组件
 // ListHeaderComponent：头组件
@@ -38,13 +39,11 @@ import px2dp from "../../utils/px2dp";
 // scrollToIndexparams: {animated?: ?boolean, index: number, viewPosition?: number}：滚动到制定的位置
 // scrollToOffset(params: {animated?: ?boolean, offset: number})：滚动到指定的偏移的位置。
 
-var ITEM_HEIGHT = 100;
-
 export default class NewsListScreen extends Component {
 
     static navigationOptions = {
         header: null
-    }
+    };
     _flatList;
     // navigation;
     // self.navigationOptions = {
@@ -59,7 +58,6 @@ export default class NewsListScreen extends Component {
     //控制器即将销毁的时候
     componentWillUnmount() {
         // 请注意Un"m"ount的m是小写
-
         // 如果存在this.timer，则使用clearTimeout清空。
         // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear
         // this.timer1 && clearTimeout(this.timer1);
@@ -81,8 +79,6 @@ export default class NewsListScreen extends Component {
             dataArray: [],
             imageStyle: {}
         }
-        // const {navigate} = this.props.navigation;
-        // this.navigation = navigate;
     }
 
 
@@ -95,18 +91,18 @@ export default class NewsListScreen extends Component {
             clearTimeout(timer)
             this.getListData()
         }, 1000)
-    }
+    };
 
     onload() {
         let timer = setTimeout(() => {
-            clearTimeout(timer)
+            clearTimeout(timer);
             alert('加载成功')
         })
     }
 
     getListData() {
         jsCallNative.loading()
-        fetch('https://v.juhe.cn/toutiao/index?key=1a52343f75501c9e0988e66bcb45d58e').then((response) => response.json()).then((json) => {
+        fetch(newsUrl).then((response) => response.json()).then((json) => {
             let data = json.result.data;
             let dataBlob = [];
             let i = 0;
@@ -114,7 +110,7 @@ export default class NewsListScreen extends Component {
                 dataBlob.push({
                     key: i,
                     value: item,
-                })
+                });
                 i++;
             });
             this.setState({
@@ -172,21 +168,12 @@ export default class NewsListScreen extends Component {
                 </View>
             </TouchableHighlight>
         )
-
-    }
-
-    // _header = () => {
-    //        return <Text style={[styles.txt,{backgroundColor:'black'}]}>这是头部</Text>;
-    //    }
-
-    //    _footer = () => {
-    //        return <Text style={[styles.txt,{backgroundColor:'black'}]}>这是尾部</Text>;
-    //    }
+    };
 
     _separator = () => {
         return <View
             style={{height: 1, backgroundColor: '#dcdcdc', marginLeft: 15, marginRight: 15}}/>;
-    }
+    };
 
     componentDidMount() {
         //请求数据
@@ -196,7 +183,7 @@ export default class NewsListScreen extends Component {
         this.setState({
             imageStyle: {
                 width: imageWith,
-                height: 100
+                height: 80
             }
         });
     }
@@ -217,45 +204,18 @@ export default class NewsListScreen extends Component {
                     <NavBar
                         title="新闻"
                         titleStyle={styles.titleStyle}
-                        style={styles.topbar}
+                        style={styles.style}
                     />
                     <FlatList
                         ref={(flatList) => this._flatList = flatList}
-                        ListHeaderComponent={this._header}
-                        ListFooterComponent={this._footer}
                         ItemSeparatorComponent={this._separator}
                         renderItem={this._renderItem}
                         onRefresh={this.refreshing}
                         refreshing={this.state.isLoading}
-                        // extraData={this.state}
-
-                        // onEndReachedThreshold={0}
+                        // onEndReachedThreshold={1}
                         // onEndReached={
                         //     this.onload
                         // }
-
-                        //列数 组件内元素必须是等高的,无法支持瀑布流布局
-                        // numColumns ={3}
-
-                        //numColumns大于1时，设置每行的样式
-                        //columnWrapperStyle={{borderWidth:2,borderColor:'black',paddingLeft:20}}
-
-                        //设置为true则变为水平列表
-                        //horizontal={true}
-
-                        //如果我们知道行高可以用此方法节省动态计算行高的开销。
-                        // getItemLayout={(data,index)=>(
-                        // {length: ITEM_HEIGHT, offset: (ITEM_HEIGHT+1) * index, index}
-                        // )}
-
-                        // onEndReachedThreshold={5}
-                        // onEndReached={(info)=>{
-                        // console.warn(info.distanceFromEnd);
-                        // }}
-
-                        // onViewableItemsChanged={(info)=>{
-                        // console.warn(info);
-                        // }}
                         data={this.state.dataArray} style={{}}>
                     </FlatList>
                 </View>
@@ -267,8 +227,8 @@ export default class NewsListScreen extends Component {
 const styles = StyleSheet.create({
     bgView: {
         flex: 1,
-        paddingTop: 15,
-        paddingBottom: 15,
+        paddingTop: 10,
+        paddingBottom: 10,
         paddingLeft: 15,
         paddingRight: 15
     },
@@ -291,7 +251,7 @@ const styles = StyleSheet.create({
         height: StatusBar.currentHeight,
         width: width
     },
-    topbar: {
+    style: {
         height: NavBar.topbarHeight,
         backgroundColor: "#fff",
         flexDirection: 'row',

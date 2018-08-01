@@ -21,11 +21,6 @@ export default class DetailListScreen extends Component {
 
     //控制器即将销毁的时候
     componentWillUnmount() {
-        // 请注意Un"m"ount的m是小写
-
-        // 如果存在this.timer，则使用clearTimeout清空。
-        // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear
-        // this.timer1 && clearTimeout(this.timer1);
         BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
     }
 

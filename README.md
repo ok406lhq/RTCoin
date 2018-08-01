@@ -74,3 +74,11 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/14.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/screen_video.gif"/>
 </div>
+
+* 7.26更新
+######  实现了新闻列表页和详情页的设计，加深了对react-navigation的了解程度：在一个界面嵌套另外多个界面时，要怎么用等等。
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/17.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/18.jpg"/>
+</div>
+
