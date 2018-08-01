@@ -1,19 +1,23 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView} from 'react-native';
-import {THEME, THEME_BACKGROUND, THEME_TEXT} from '../../assets/css/color';
-import {getStackOptions} from '../../common/navigatorOpts';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TextInput,
+    KeyboardAvoidingView,
+    StatusBar,
+    Dimensions, BackHandler
+} from 'react-native';
+import {THEME_BACKGROUND, THEME_TEXT} from '../../assets/css/color';
 import CButton from '../../common/button';
+import NavBar from "../../common/NavBar";
 
-// 清空导航记录，跳转到首页
-// const resetAction = NavigationActions.reset({
-//     index: 0,
-//     actions: [
-//         NavigationActions.navigate({routeName: 'Login'})
-//     ]
-// });
+const {width} = Dimensions.get('window');
 
 export class FindAccountPage extends Component {
-    static navigationOptions = getStackOptions('找回密码');
+    static navigationOptions = {
+        header: null
+    };
     mobile = '';
     code = '';
     password = '';
@@ -26,8 +30,18 @@ export class FindAccountPage extends Component {
     }
 
     componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
         this.timer && clearInterval(this.timer);
     }
+
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    onBackAndroid = () => {
+        this.props.navigation.goBack();
+        return true;
+    };
 
     getCode() {
         if (!this.mobile) {
@@ -94,33 +108,55 @@ export class FindAccountPage extends Component {
         let codeBtnText = this.state && this.state.sendFlag && this.state.second ? '已发送' + this.state.second + 's' : '获取验证码';
         let codeBtnStyle = this.state && this.state.sendFlag ? styles.codeBtnDisabled : styles.codeBtn;
         return (
-            <KeyboardAvoidingView
-                style={styles.regPage}
-                behavior="margin">
-                <TextInput style={styles.regInput} placeholder='手机号码' keyboardType={'numeric'}
-                           autoCapitalize={'none'} maxLength={11} underlineColorAndroid={'transparent'}
-                           onChangeText={(text) => this.mobile = text}/>
-                <View style={[styles.codeRow, styles.regInput]}>
-                    <TextInput style={{flex: 1}} placeholder='手机验证码' keyboardType={'numeric'}
-                               autoCapitalize={'none'} maxLength={6} underlineColorAndroid={'transparent'}
-                               onChangeText={(text) => this.code = text}/>
-                    <CButton disabled={this.state.sendFlag}
-                             style={codeBtnStyle} title={codeBtnText}
-                             onPress={() => this.getCode()}/>
-                </View>
-                <TextInput style={styles.regInput} placeholder='密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
-                           onChangeText={(text) => this.password = text}/>
-                <TextInput style={styles.regInput} placeholder='确认密码' secureTextEntry={true}
-                           autoCapitalize={'none'} maxLength={20} underlineColorAndroid={'transparent'}
-                           onChangeText={(text) => this.password2 = text}/>
-                <CButton style={styles.regInput} title={'找回密码'}
-                         onPress={() => this.doSubmit()}/>
-                <Text style={styles.message}>{message}</Text>
-                <View style={{height:40}}/>
-            </KeyboardAvoidingView>
+            <View style={{flex: 1}}>
+                <StatusBar
+                    translucent={true}
+                    animated={true}
+                    backgroundColor={"#73808080"}
+                    barStyle={"light-content"}
+                />
+                <View style={styles.sBar} backgroundColor={'#1E82D2'}/>
+                <NavBar
+                    title="找回密码"
+                    leftIcon="ios-arrow-back"
+                    leftPress={this.leftPress.bind(this)}
+                />
+                <KeyboardAvoidingView
+                    style={styles.regPage}
+                    behavior="margin">
+                    <TextInput style={styles.regInput} placeholder='手机号码' keyboardType={'numeric'}
+                               autoCapitalize={'none'} maxLength={11}
+                               underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.mobile = text}/>
+                    <View style={[styles.codeRow, styles.regInput]}>
+                        <TextInput style={{flex: 1}} placeholder='手机验证码' keyboardType={'numeric'}
+                                   autoCapitalize={'none'} maxLength={6}
+                                   underlineColorAndroid={'transparent'}
+                                   onChangeText={(text) => this.code = text}/>
+                        <CButton disabled={this.state.sendFlag}
+                                 style={codeBtnStyle} title={codeBtnText}
+                                 onPress={() => this.getCode()}/>
+                    </View>
+                    <TextInput style={styles.regInput} placeholder='密码' secureTextEntry={true}
+                               autoCapitalize={'none'} maxLength={20}
+                               underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.password = text}/>
+                    <TextInput style={styles.regInput} placeholder='确认密码' secureTextEntry={true}
+                               autoCapitalize={'none'} maxLength={20}
+                               underlineColorAndroid={'transparent'}
+                               onChangeText={(text) => this.password2 = text}/>
+                    <CButton style={styles.regInput} title={'找回密码'}
+                             onPress={() => this.doSubmit()}/>
+                    <Text style={styles.message}>{message}</Text>
+                    <View style={{height: 40}}/>
+                </KeyboardAvoidingView>
+            </View>
         )
     }
+
+    leftPress = () => {
+        this.props.navigation.goBack();
+    };
 }
 
 const styles = StyleSheet.create({
@@ -145,5 +181,9 @@ const styles = StyleSheet.create({
         marginTop: 16,
         color: THEME_TEXT,
         fontSize: 14
-    }
+    },
+    sBar: {
+        height: StatusBar.currentHeight,
+        width: width
+    },
 });

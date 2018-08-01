@@ -15,7 +15,6 @@ import Item from "../../common/Item";
 import NavBar from "../../common/NavBar";
 
 import Icon from 'react-native-vector-icons/Ionicons'
-import CButton from "../../common/button";
 
 let {width, height} = Dimensions.get('window');
 const sHeight = StatusBar.currentHeight;
@@ -36,10 +35,10 @@ export default class MinePage extends Component {
     };
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isRefreshing: false
-        }
+        };
         this.config = [
             {icon: "ios-pin", name: "提币地址"},
             {icon: "ios-heart", name: "我的收藏", color: "#fc7b53"},
@@ -51,10 +50,6 @@ export default class MinePage extends Component {
             {icon: "ios-outlet", name: "欢迎评分"},
             {icon: "md-contacts", name: "关于我们"},
         ]
-    }
-
-    leftPress() {
-
     }
 
     rightPress() {
@@ -78,7 +73,7 @@ export default class MinePage extends Component {
 
     _renderListItem() {
         return this.config.map((item, i) => {
-            if (i % 3 == 0) {
+            if (i % 3 === 0) {
                 item.first = true
             }
             return (<Item key={i} {...item}/>)
@@ -95,8 +90,8 @@ export default class MinePage extends Component {
                 <View style={styles.sBar} backgroundColor={'#1E82D2'}/>
                 <NavBar
                     title="我的"
-                    leftIcon="ios-notifications-outline"
-                    leftPress={this.leftPress.bind(this)}
+                    // leftIcon="ios-notifications-outline"
+                    // leftPress={this.leftPress.bind(this)}
                     rightIcon="ios-settings-outline"
                     rightPress={this.rightPress.bind(this)}
                 />

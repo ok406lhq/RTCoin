@@ -21,6 +21,7 @@ export const TabNav = TabNavigator(
             screen: MinePage,
         }
     },
+
     {
         tabBarOptions: {
             //当前选中的tab bar的文本颜色和图标颜色

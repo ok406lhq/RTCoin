@@ -10,12 +10,11 @@ import {
     Text,
     ListView,
     Image,
-    StatusBar
+    StatusBar, BackHandler
 } from 'react-native';
 import QuickEntry from "../../common/QuickEntry";
 import ListViewComponent3 from "../../common/ListViewComponent3";
 import Banner from "../../common/Banner";
-import Icon from "react-native-vector-icons/MaterialIcons";
 import NavBar from "../../common/NavBar";
 
 const statusBarH = StatusBar.currentHeight;
@@ -26,7 +25,7 @@ let {width} = Dimensions.get('window');
 let cols = 4;
 let cellWH = 80;
 let vMargin = (width - cellWH * cols) / (cols + 1);
-let hMargin = 15
+let hMargin = 15;
 
 // 九宫格配置对象
 export const data = [
@@ -100,7 +99,7 @@ export const data = [
 export default class PayScreen extends Component {
     static navigationOptions = {
         header: null,
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -108,36 +107,48 @@ export default class PayScreen extends Component {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         //2.设置返回数据
         this.state = {dataSource: ds.cloneWithRows(data)};
-        thiz = this;
     }
+
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    onBackAndroid = () => {
+        this.props.navigation.goBack();
+        return true;
+    };
 
     render() {
         return (
-            <ScrollView style={styles.container}>
+            <View style={{flex: 1}}>
                 <View style={styles.sBar} backgroundColor={'#1E82D2'}/>
                 <NavBar
                     title="支付"
                     leftIcon="ios-arrow-back"
                     leftPress={this.leftPress.bind(this)}
-                    rightIcon="ios-settings-outline"
-                    rightPress={this.rightPress.bind(this)}
+                    // rightIcon="ios-settings-outline"
+                    // rightPress={this.rightPress.bind(this)}
                 />
-                <QuickEntry/>
-                <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow={this._renderRow}
-                    contentContainerStyle={styles.listViewStyle}/>
-                <Banner/>
-                <ListViewComponent3/>
-            </ScrollView>
+                <ScrollView style={styles.container}>
+                    <QuickEntry/>
+                    <ListView
+                        dataSource={this.state.dataSource}
+                        renderRow={this._renderRow}
+                        contentContainerStyle={styles.listViewStyle}/>
+                    <Banner/>
+                    <ListViewComponent3/>
+                </ScrollView>
+            </View>
+
         );
     }
 
     leftPress = () => {
         this.props.navigation.goBack();
-    };
-    rightPress = () => {
-
     };
 
     //
@@ -145,7 +156,7 @@ export default class PayScreen extends Component {
     //     this.props.navigation.goBack();
     // }
 
-    _renderRow = (rowData, sectionID, rowID, highlightRow) => {
+    _renderRow = (rowData) => {
         {
             return (
                 <View style={styles.innerViewStyle}>
