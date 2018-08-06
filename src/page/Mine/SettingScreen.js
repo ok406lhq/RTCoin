@@ -9,7 +9,7 @@ import {
     View,
     StatusBar,
     Dimensions,
-    StyleSheet
+    StyleSheet, BackHandler
 } from 'react-native';
 import NavBar from "../../common/NavBar";
 import Item from "../../common/Item";
@@ -24,6 +24,19 @@ export default class SettingScreen extends Component {
     constructor(props) {
         super(props)
     }
+
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    onBackAndroid = () => {
+        this.props.navigation.goBack();
+        return true;
+    };
 
     render() {
         return (

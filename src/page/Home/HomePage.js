@@ -59,7 +59,7 @@ export default class HomePage extends Component {
                 />
                 <WebView
                     // source={{uri: 'http://www.qiandu.com/#/mine/center'}}
-                    source={{uri: 'https://github.com/ok406lhq'}}
+                    source={{uri: 'https://www.imooc.com/#'}}
                     startInLoadingState
                     renderLoading={() => {
                         return this.loading()

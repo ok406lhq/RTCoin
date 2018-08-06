@@ -11,14 +11,12 @@ import {
     View,
     Animated,
     TouchableOpacity,
-    StatusBar,
     TouchableNativeFeedback,
     Platform
 } from 'react-native'
 import px2dp from '../utils/px2dp'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const sHeight = StatusBar.currentHeight;
 const PropTypes = require('prop-types');
 export default class NavBar extends Component {
     static propTypes = {

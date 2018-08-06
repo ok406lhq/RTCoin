@@ -10,7 +10,7 @@ import {
     ScrollView,
     StyleSheet,
     StatusBar,
-    Dimensions
+    Dimensions, BackHandler
 } from 'react-native'
 import NavBar from '../../common/NavBar'
 import Item from '../../common/Item'
@@ -20,6 +20,18 @@ const {width} = Dimensions.get('window');
 export default class UserProfile extends Component {
     static navigationOptions = {
         header: null
+    };
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+
+    onBackAndroid = () => {
+        this.props.navigation.goBack();
+        return true;
     };
 
     constructor(props) {
