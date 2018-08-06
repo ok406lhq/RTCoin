@@ -77,8 +77,12 @@
 
 * 7.26更新
 ######  实现了新闻列表页和详情页的设计，加深了对react-navigation的了解程度：在一个界面嵌套另外多个界面时，要怎么用等等。
+* 7.27更新
+######  实现下图最右边的布局，有点像是支付宝的页面哈···使用Listview实现的，顶部的导航栏首次对组件进行传参调用，具体可参考我的这篇博客：[React Native组件学习之设置动态参数](https://www.jianshu.com/p/429458c46017)，写得粗糙，见谅哈:joy::joy::joy:
 <div align="center">
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/17.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/18.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/19.png"/>
 </div>
+
 
