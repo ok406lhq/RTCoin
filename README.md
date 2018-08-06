@@ -84,5 +84,9 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/18.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/19.png"/>
 </div>
-
+* 8.06更新 最近比较忙，更新得比较少，来补充一下关于获取联系人列表的点。这个需求我用到了[react-native-contacts-picker](https://github.com/yushengchu/react-native-contacts-picker)这个库，很实用的一个库,通讯录的选择器是调用系统原生的。实现的效果如下：
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/20.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/21.png"/>
+</div>
 
