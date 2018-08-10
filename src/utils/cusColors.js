@@ -17,7 +17,7 @@ button_light: '#4D8EFE',
   tab_light: '#4D8EFE',
     tab_default: '#4D8EFB',
 
-    linear_light: '#1E82D2',
+    linear_light: '#00B0EC',
     // linear_default: '#37a4ff',
     linear_default: '#1E82D2',
 

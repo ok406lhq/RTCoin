@@ -58,8 +58,7 @@ export default class MyButtonView extends Component {
                     end={{x: 0.0, y: 1.0}}
                     locations={[0, 1]}
                     // colors={params.modal ? [cusColors.button_light, cusColors.button_default] : [cusColors.linear_default, cusColors.linear_light]}
-                    colors={[params.color1, params.color2]}
-                >
+                    colors={[params.color1, params.color2]}>
 
 
                     <ZText content={this.props.title} fontSize={params.fontSize} color={'white'}/>

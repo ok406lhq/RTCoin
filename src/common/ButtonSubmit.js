@@ -30,8 +30,6 @@ import {cusColors} from "../utils/cusColors";
 import ZText from "./ZText";
 import MyButtonView from "./MyButtonView";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
-import bgSrc from "../../android/app/src/main/res/drawable-xhdpi/login_bg.jpg";
-
 
 const Dimensions = require('Dimensions');
 const DEVICE_WIDTH = Dimensions.get('window').width;
@@ -289,7 +287,7 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#00B0EC',
+        backgroundColor: '#1E82D2',
         height: MARGIN,
         borderRadius: 20,
         zIndex: 100,

@@ -115,7 +115,6 @@ export default class LoginByVerify extends Component {
                             })
                         }}/>
 
-
                     <View style={{
                         width: width / 1.3,
                         height: zdp(50),
