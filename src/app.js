@@ -13,6 +13,11 @@ import UserProfile from "./page/Mine/UserProfile";
 import SettingScreen from "./page/Mine/SettingScreen";
 import NewsListScreen from "./page/Task/NewsListScreen";
 import DetailListScreen from "./page/Task/DetailListScreen";
+import LoginByVerify from "./page/Login/LoginByVerify";
+import ForgetPsw from "./page/Login/ForgetPsw";
+import RegisterMerchant from "./page/Login/RegisterMerchant";
+import RegisterMerchantNext from "./page/Login/RegisterMerchantNext";
+import RegisterSuccess from "./page/Login/RegisterSuccess";
 // import WebScreen from "./page/Friend/WebScreen"; // 本地存储全局对象
 
 const App = StackNavigator({
@@ -26,6 +31,11 @@ const App = StackNavigator({
         Contact: {screen: ContactScreen},
         Pay: {screen: PayScreen},
         Login: {screen: LoginScreen}, // 登录页
+        LoginByVerify: {screen: LoginByVerify}, // 短信登录
+        ForgetPsw: {screen: ForgetPsw}, // 忘记密码
+        RegisterMerchant: {screen: RegisterMerchant}, // 注册页
+        RegisterMerchantNext: {screen: RegisterMerchantNext}, // 注册下一页
+        RegisterSuccess: {screen: RegisterSuccess}, // 注册成功
         Reg: {screen: RegPage}, // 注册页
         FindAccount: {screen: FindAccountPage}, // 找回密码页
         Main: {
@@ -36,7 +46,7 @@ const App = StackNavigator({
         }
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Login',
         headerMode: 'screen'
     });
 

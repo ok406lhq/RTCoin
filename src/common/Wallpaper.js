@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import {StyleSheet, ImageBackground, StatusBar} from 'react-native';
+import {StyleSheet, ImageBackground} from 'react-native';
 
-import bgSrc from '../img/wallpaper2.jpg';
+import bgSrc from '../../android/app/src/main/res/drawable-xhdpi/login_bg.jpg';
 
 export default class Wallpaper extends Component {
     render() {
         return (
             <ImageBackground style={styles.picture} source={bgSrc}>
-                <StatusBar
-                    translucent={true}
-                    animated={true}
-                    backgroundColor={"#73808080"}
-                    barStyle={"light-content"}
-                />
+
                 {this.props.children}
             </ImageBackground>
         );

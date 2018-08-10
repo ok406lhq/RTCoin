@@ -69,7 +69,7 @@ export default class VideoScreen extends Component {
     };
 
     onEnd = () => {
-        this.setState({paused: true})
+        this.setState({paused: true});
         this.video.seek(0)
     };
 
@@ -88,47 +88,6 @@ export default class VideoScreen extends Component {
         return 0;
     };
 
-    renderRateControl(rate) {
-        const isSelected = (this.state.rate === rate);
-
-        return (
-            <TouchableOpacity onPress={() => {
-                this.setState({rate})
-            }}>
-                <Text style={[styles.controlOption, {fontWeight: isSelected ? 'bold' : 'normal'}]}>
-                    {rate}x
-                </Text>
-            </TouchableOpacity>
-        );
-    }
-
-    renderResizeModeControl(resizeMode) {
-        const isSelected = (this.state.resizeMode === resizeMode);
-
-        return (
-            <TouchableOpacity onPress={() => {
-                this.setState({resizeMode})
-            }}>
-                <Text style={[styles.controlOption, {fontWeight: isSelected ? 'bold' : 'normal'}]}>
-                    {resizeMode}
-                </Text>
-            </TouchableOpacity>
-        )
-    }
-
-    renderVolumeControl(volume) {
-        const isSelected = (this.state.volume === volume);
-
-        return (
-            <TouchableOpacity onPress={() => {
-                this.setState({volume})
-            }}>
-                <Text style={[styles.controlOption, {fontWeight: isSelected ? 'bold' : 'normal'}]}>
-                    {volume * 100}%
-                </Text>
-            </TouchableOpacity>
-        )
-    }
 
     render() {
         const flexCompleted = this.getCurrentTimePercentage() * 100;
@@ -171,15 +130,9 @@ export default class VideoScreen extends Component {
                 </View>
 
                 <View style={styles.controls}>
-                    <View style={styles.generalControls}>
-
-                    </View>
-
-                    <View style={styles.trackingControls}>
-                        <View style={styles.progress}>
-                            <View style={[styles.innerProgressCompleted, {flex: flexCompleted}]}/>
-                            <View style={[styles.innerProgressRemaining, {flex: flexRemaining}]}/>
-                        </View>
+                    <View style={styles.progress}>
+                        <View style={[styles.innerProgressCompleted, {flex: flexCompleted}]}/>
+                        <View style={[styles.innerProgressRemaining, {flex: flexRemaining}]}/>
                     </View>
                 </View>
             </View>
@@ -236,37 +189,11 @@ const styles = StyleSheet.create({
         height: 20,
         backgroundColor: '#2C2C2C',
     },
-    generalControls: {
-        flex: 1,
-        flexDirection: 'row',
-        borderRadius: 4,
-        overflow: 'hidden',
-        paddingTop: 10,
-    },
-    rateControl: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
     volumeControl: {
         fontSize: 25,
         color: '#fff',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-    },
-    resizeModeControl: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    controlOption: {
-        alignSelf: 'center',
-        fontSize: 11,
-        color: 'white',
-        paddingLeft: 2,
-        paddingRight: 2,
-        lineHeight: 12,
     },
 });
