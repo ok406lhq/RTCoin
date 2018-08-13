@@ -26,9 +26,13 @@ export default class MovieListScreen extends Component {
     }
 
     onBackAndroid = () => {
-        this.props.navigation.goBack();
+        const {navigate, goBack, state} = this.props.navigation;
+        state.params.returnData(2);
+        goBack();
+        // this.props.navigation.state.params.returnData(2);
+        // this.props.navigation.goBack();
         return true;
-    }
+    };
 
     componentDidMount() {
         /// 根据routeName来判断当前是哪个界面，react-navigation中可以通过navigation.state.routeName来获取

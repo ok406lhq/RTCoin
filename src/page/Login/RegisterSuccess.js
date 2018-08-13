@@ -106,9 +106,7 @@ export default class RegisterSuccess extends Component {
                     } else {
                         ToastUtil.showShort(res.respCode)
                     }
-
                 }).catch(err => {
-
                 // ToastUtil.showShort(err);
             })
 

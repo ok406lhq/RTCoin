@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     View,
     Button,
+    Alert,
     BackHandler
 } from 'react-native';
 
@@ -34,18 +35,28 @@ export default class VideoScreen extends Component {
         header: null
     };
 
-    state = {
-        rate: 1,
-        volume: 1,
-        muted: false,
-        resizeMode: 'contain',
-        duration: 0.0,
-        currentTime: 0.0,
-        paused: true,
-    };
+    // 构造
+    constructor(props) {
+        super(props);
+        // 初始状态
+        this.state = {
+            tag: 1,
+            rate: 1,
+            volume: 1,
+            muted: false,
+            resizeMode: 'contain',
+            duration: 0.0,
+            currentTime: 0.0,
+            paused: true,
+        };
+    }
+
 
     componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+        this.params = this.props.navigation.state.params;
+        console.log(this.state.tag + "lamb");
+
     }
 
     componentWillUnmount() {
@@ -63,9 +74,38 @@ export default class VideoScreen extends Component {
         console.log(data.duration + "xxx");
     };
 
+    // returnData(tag) {
+    //     this.setState({tag: tag});
+    // }
+
     onProgress = (data) => {
         this.setState({currentTime: data.currentTime});
         console.log(data.currentTime + "hhh");
+        this.params = this.props.navigation.state.params;
+        console.log(this.state.tag + "lam");
+        console.log(this.state.duration * 0.5 + "sss");
+        if (data.currentTime > this.state.duration * 0.5 && this.state.tag !== 2) {
+            this.setState({paused: !this.state.paused});
+            Alert.alert('您需要分享App才能继续观看视频哦', '请选择', [
+                {
+                    text: '取消', onPress: () => {
+                        this.props.navigation.goBack();
+                    }
+                },
+                {
+                    text: '分享', onPress: () => {
+                        console.log(this.state.tag + "lamb");
+                        this.props.navigation.navigate('Movie', {
+                            returnData: (tag) => {
+                                this.setState({tag: tag});
+                            }
+                        });
+                    }
+                },
+            ]);
+        } else if (this.state.tag === 1) {
+            this.setState({paused: false});
+        }
     };
 
     onEnd = () => {
@@ -119,7 +159,8 @@ export default class VideoScreen extends Component {
                     />
                 </TouchableOpacity>
                 <View style={styles.textStyle}>
-                    <Text style={styles.volumeControl}>
+                    <Text style={styles.volumeControl}
+                          onPress={() => this.setState({paused: false})}>
                         {formatTime(this.state.duration - this.state.currentTime)}
                     </Text>
 
