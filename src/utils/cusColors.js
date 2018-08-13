@@ -57,7 +57,7 @@ button_light: '#4D8EFE',
 
     text_main: '#333333',
     // text_main: '#333333',
-    text_secondary:'#999999',
+    text_secondary:'#BCBCBC',
     text_666:'#666666',
     // text_third:'#c1c1c1',
     text_placeHold: '#BCBCBC',

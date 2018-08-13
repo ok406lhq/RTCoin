@@ -12,14 +12,16 @@ import {
     StatusBar, BackHandler
 } from 'react-native';
 import MyButtonView from "../../common/MyButtonView";
-import {zdp, zsp} from "../../utils/ScreenUtil";
+import {isIphoneX, zdp, zsp} from "../../utils/ScreenUtil";
 import {cusColors} from "../../utils/cusColors";
 import {fetchRequest} from "../../utils/FetchUtil";
-import {save2Realm} from "../../utils/SaveRealmUtil";
 import ToastUtil from "../../utils/ToastUtil";
 
 
 export default class RegisterSuccess extends Component {
+    static navigationOptions = {
+        header: null
+    };
 
     constructor(props) {
         super(props);
@@ -71,7 +73,7 @@ export default class RegisterSuccess extends Component {
                 <ZText content={`${this.params.type === 0 ? '密码修改成功' : '注册成功'}`}
                        parentStyle={{
                            width: width,
-                           marginTop: zdp(100),
+                           marginTop: zdp(80),
                            backgroundColor: 'transparent',
                            justifyContent: 'center',
                            alignItems: 'center'
@@ -92,27 +94,16 @@ export default class RegisterSuccess extends Component {
 
     pressSuccess = () => {
         if (this.params.type === 0) {
-            this.props.navigation.navigate('RegisterApp');
+            this.props.navigation.navigate('Login');
         } else {
             let formData = new FormData();
             formData.append('phone', this.params.phone);
             formData.append('password', this.params.password);
             fetchRequest('Login', 'POST', formData)
                 .then(res => {
-
-
                     if (res.respCode === 200) {
-
-                        let cardLength = getCardLength(res.data.phone);
-                        if (cardLength !== res.data.CardLen) {
-                            //长度不同则刷新本地数据库
-                            save2Realm(res.data);
-                        }
-                        this.save2Global(res.data);
-
-                        this.props.navigation.navigate('Video');
+                        this.props.navigation.navigate('Home');
                     } else {
-
                         ToastUtil.showShort(res.respCode)
                     }
 
@@ -122,21 +113,6 @@ export default class RegisterSuccess extends Component {
             })
 
         }
-    }
-    /**
-     * 存储全局信息
-     * @param resData
-     */
-    save2Global = (resData) => {
-        this.props.initGlobalInfo({
-            token: resData.token,
-            phone: resData.phone,
-            IDCard: resData.identity,
-            username: resData.name,
-            merCode: resData.merCode,
-            appUser: resData.appUser,
-            recommend: resData.recommend
-        });
     }
 }
 

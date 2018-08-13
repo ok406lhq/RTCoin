@@ -3,9 +3,6 @@ import {
     StyleSheet,
     TouchableOpacity,
     Text,
-    Animated,
-    Easing,
-    ActivityIndicator,
     View,
     StatusBar,
     Image,
@@ -21,7 +18,6 @@ import {
     isIphoneX,
     zAppBarHeight,
     zdp,
-    zHeight,
     zsp,
     zStatusBarHeight,
     zWidth
@@ -32,21 +28,16 @@ import MyButtonView from "./MyButtonView";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 
 const Dimensions = require('Dimensions');
-const DEVICE_WIDTH = Dimensions.get('window').width;
-const MARGIN = 40;
+const {width, height} = Dimensions.get('window');
 
-export default class ButtonSubmit extends Component {
+export default class LoginView extends Component {
     constructor() {
         super();
 
         this.state = {
-            isLoading: false,
             phone: '',
             password: ''
         };
-
-        this.buttonAnimated = new Animated.Value(0);
-        this.growAnimated = new Animated.Value(0);
         this._onPress = this._onPress.bind(this);
     }
 
@@ -93,27 +84,9 @@ export default class ButtonSubmit extends Component {
 
                     if (res.respCode === 200 && !this.state.isLoading) {
                         console.log(res.data);
-                        if (this.state.isLoading) return;
 
-                        this.setState({isLoading: true});
                         SPSaveLoginInfo(this.state.phone, this.state.password);
                         this.props.navigate('Home');
-                        Animated.timing(this.buttonAnimated, {
-                            toValue: 1,
-                            duration: 200,
-                            easing: Easing.linear,
-                        }).start();
-
-                        setTimeout(() => {
-                            this._onGrow();
-                        }, 2000);
-
-                        setTimeout(() => {
-                            this.props.navigate('Home');
-                            this.setState({isLoading: false});
-                            this.buttonAnimated.setValue(0);
-                            this.growAnimated.setValue(0);
-                        }, 2300);
                     } else {
                         ToastUtil.showShort(res.respMsg);
                     }
@@ -124,23 +97,8 @@ export default class ButtonSubmit extends Component {
         });
     }
 
-    _onGrow() {
-        Animated.timing(this.growAnimated, {
-            toValue: 1,
-            duration: 200,
-            easing: Easing.linear,
-        }).start();
-    }
 
     render() {
-        const changeWidth = this.buttonAnimated.interpolate({
-            inputRange: [0, 1],
-            outputRange: [DEVICE_WIDTH - MARGIN, MARGIN],
-        });
-        const changeScale = this.growAnimated.interpolate({
-            inputRange: [0, 1],
-            outputRange: [1, MARGIN],
-        });
         return (
             <KeyboardAwareScrollView style={{flex: 1, width: zWidth, backgroundColor: 'white'}}
                                      behavior="padding"
@@ -161,8 +119,8 @@ export default class ButtonSubmit extends Component {
                     <Image source={{uri: isIphoneX() ? 'login_bg_x' : 'login_bg'}}
                            resizeMode={'cover'}
                            style={{
-                               width: DEVICE_WIDTH,
-                               height: zHeight,
+                               width: width,
+                               height: height,
                                position: 'absolute'
                            }}/>
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
@@ -182,7 +140,7 @@ export default class ButtonSubmit extends Component {
                                style={{
                                    width: zdp(140),
                                    height: zdp(80),
-                                   marginTop: zAppBarHeight + zdp(26)
+                                   marginTop: zAppBarHeight + zdp(20)
                                }}
                                resizeMode={'contain'}/>
 
@@ -214,23 +172,10 @@ export default class ButtonSubmit extends Component {
                         })
                     }}
                 />
-                <Animated.View style={{width: DEVICE_WIDTH / 3, marginTop: zdp(40)}}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={() => {
-                            this._onPress();
-                        }}
-                        activeOpacity={1}>
-                        {this.state.isLoading ? (
-                            <ActivityIndicator style={styles.button} size="small" color="#EF0B53"/>
-                        ) : (
-                            <Text style={styles.text}>登录</Text>
-                        )}
-                    </TouchableOpacity>
-                    <Animated.View
-                        style={[styles.circle, {transform: [{scale: changeScale}]}]}
-                    />
-                </Animated.View>
+
+                <MyButtonView style={{width: width / 1.3, marginTop: zdp(75.5)}} modal={1}
+                              title={'登 录'}
+                              onPress={this._onPress}/>
                 <View style={styles.wtf}>
                     <TouchableOpacity activeOpacity={0.9}
                                       style={{
@@ -240,25 +185,29 @@ export default class ButtonSubmit extends Component {
                                       onPress={
                                           this.pressLoginByVerify
                                       }>
-                        <Text style={styles.stext}>短信登陆</Text>
+                        <ZText parentStyle={{marginLeft: zdp(40)}} content={'验证码登录'}
+                               fontSize={zsp(16)} color={cusColors.text_secondary}
+                               textAlign={'center'}/>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.9}
                                       style={{
                                           justifyContent: 'center', alignItems: 'center',
-                                          padding: zdp(10)
+                                          padding: zdp(5)
                                       }}
                                       onPress={
                                           this.pressForgetPsw
                                       }>
-                        <Text style={styles.stext}>忘记密码</Text>
+                        <ZText parentStyle={{marginRight: zdp(40)}} content={'忘记密码?'}
+                               fontSize={zsp(16)} color={cusColors.text_secondary}
+                               textAlign={'center'}/>
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexDirection: 'row',
-                    padding: zdp(0),
-                    marginTop: zdp(80)
+                    padding: zdp(5),
+                    marginTop: zdp(40)
                 }}>
                     <ZText content={'没有账号?'} fontSize={zsp(16)}
                            color={cusColors.text_secondary}/>
@@ -269,6 +218,7 @@ export default class ButtonSubmit extends Component {
                                   onPress={this.pressRegister.bind(this)}/>
                 </View>
             </KeyboardAwareScrollView>
+
         );
     }
 
@@ -284,43 +234,16 @@ export default class ButtonSubmit extends Component {
 }
 
 const styles = StyleSheet.create({
-    button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#1E82D2',
-        height: MARGIN,
-        borderRadius: 20,
-        zIndex: 100,
-    },
-    circle: {
-        height: MARGIN,
-        width: MARGIN,
-        marginTop: -MARGIN,
-        borderWidth: 1,
-        borderColor: '#1E82D2',
-        borderRadius: 100,
-        alignSelf: 'center',
-        zIndex: 99,
-        backgroundColor: '#1E82D2',
-    },
     text: {
         color: 'white',
         backgroundColor: 'transparent',
     },
-    image: {
-        width: 24,
-        height: 24,
-    },
     wtf: {
         marginTop: zdp(15),
         top: zdp(5),
-        width: DEVICE_WIDTH,
+        width: width,
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
-    stext: {
-        fontSize: zsp(16),
-        color: cusColors.text_secondary
-    }
 });
 

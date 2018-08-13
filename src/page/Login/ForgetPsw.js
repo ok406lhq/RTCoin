@@ -203,7 +203,7 @@ export default class ForgetPsw extends Component {
                     <View style={{
                         flex: 1,
                         width: width,
-                        height: zdp(139),
+                        height: zdp(138.5),
                         justifyContent: 'flex-start',
                         alignItems: 'center'
                     }}>

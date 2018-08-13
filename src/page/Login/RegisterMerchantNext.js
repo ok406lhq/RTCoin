@@ -79,7 +79,7 @@ export default class RegisterMerchantNext extends Component {
                 <Image source={require('../../img/logo2.png')}
                        style={{
                            width: zdp(140),
-                           height: zdp(66),
+                           height: zdp(80),
                            marginTop: zdp(30)
                        }}
                        resizeMode={'contain'}/>

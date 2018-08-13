@@ -99,7 +99,7 @@ export default class LoginByVerify extends Component {
                     <Image source={require('../../img/logo2.png')}
                            style={{
                                width: zdp(140),
-                               height: zdp(66),
+                               height: zdp(100),
                                marginTop: zdp(100) - zAppBarHeight
                            }}
                            resizeMode={'contain'}/>

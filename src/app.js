@@ -1,8 +1,6 @@
 import React from 'react';
 import {StackNavigator} from 'react-navigation';
 import {TabNav} from "./RootPage";
-import RegPage from "./page/Login/regPage";
-import {FindAccountPage} from "./page/Login/findAccountPage"; // 路由导航
 import VideoScreen from "./page/Task/VideoScreen";
 import PayScreen from "./page/Task/PayScreen";
 import ContactScreen from "./page/Task/ContactScreen";
@@ -18,7 +16,6 @@ import ForgetPsw from "./page/Login/ForgetPsw";
 import RegisterMerchant from "./page/Login/RegisterMerchant";
 import RegisterMerchantNext from "./page/Login/RegisterMerchantNext";
 import RegisterSuccess from "./page/Login/RegisterSuccess";
-// import WebScreen from "./page/Friend/WebScreen"; // 本地存储全局对象
 
 const App = StackNavigator({
         // Web: {screen: WebScreen},
@@ -36,8 +33,6 @@ const App = StackNavigator({
         RegisterMerchant: {screen: RegisterMerchant}, // 注册页
         RegisterMerchantNext: {screen: RegisterMerchantNext}, // 注册下一页
         RegisterSuccess: {screen: RegisterSuccess}, // 注册成功
-        Reg: {screen: RegPage}, // 注册页
-        FindAccount: {screen: FindAccountPage}, // 找回密码页
         Main: {
             screen: TabNav,
             navigationOptions: ({navigation}) => ({

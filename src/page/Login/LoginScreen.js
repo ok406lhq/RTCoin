@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ButtonSubmit from '../../common/ButtonSubmit';
+import LoginView from '../../common/LoginView';
 
 export default class LoginScreen extends Component {
     static navigationOptions = {
@@ -9,7 +9,7 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <ButtonSubmit navigate={this.props.navigation.navigate}/>
+            <LoginView navigate={this.props.navigation.navigate}/>
         );
     }
 }
