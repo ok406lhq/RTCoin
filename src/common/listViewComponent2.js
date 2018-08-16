@@ -43,26 +43,26 @@ export const data = [
         title: '支付',
         "btn": "+10算力"
     },
-    {
-        icon: require('../img/icon6.png'),
-        title: '转入',
-        "btn": "+10算力"
-    },
-    {
-        icon: require('../img/icon7.png'),
-        title: '转出',
-        "btn": "+10算力"
-    },
-    {
-        icon: require('../img/icon8.png'),
-        title: '买入',
-        "btn": "+10算力"
-    },
-    {
-        icon: require('../img/icon9.png'),
-        title: '卖出',
-        "btn": "+10算力"
-    },
+    // {
+    //     icon: require('../img/icon6.png'),
+    //     title: '转入',
+    //     "btn": "+10算力"
+    // },
+    // {
+    //     icon: require('../img/icon7.png'),
+    //     title: '转出',
+    //     "btn": "+10算力"
+    // },
+    // {
+    //     icon: require('../img/icon8.png'),
+    //     title: '买入',
+    //     "btn": "+10算力"
+    // },
+    // {
+    //     icon: require('../img/icon9.png'),
+    //     title: '卖出',
+    //     "btn": "+10算力"
+    // },
 ];
 
 export default class listViewComponent2 extends Component {

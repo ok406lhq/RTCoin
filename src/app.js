@@ -41,7 +41,7 @@ const App = StackNavigator({
         }
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Login',
         headerMode: 'screen'
     });
 
