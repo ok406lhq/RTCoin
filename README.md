@@ -93,4 +93,19 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/22.png"/>
 </div>
 
+* 8.16更新
+###### 1、将LoginScreen用真实数据接口实现了登录模块的功能，另外，还实现了注册、短信登录、忘记密码找回的功能实现。其中封装了一些工具类，例如实现网络请求的fetchUtil，正则校验手机号码的CheckUtils，短信验证码计时器CountdownUtil等，这些工具类可以一次封装，多次使用，很方便:thumbsup:
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/23.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/24.jpg"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/25.png"/>
+
+###### 2、VideoScreen做了对播放进度的监听处理，使得弹出弹框进入分享界面，分享界面还没做，后续会跟上...
+</div>
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/26.png"/>
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/27.png"/>
+</div>
+
+
 [点我回到顶部](#readme)
