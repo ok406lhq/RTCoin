@@ -82,7 +82,7 @@ export default class VideoScreen extends Component {
         this.setState({currentTime: data.currentTime});
         console.log(data.currentTime + "hhh");
         this.params = this.props.navigation.state.params;
-        console.log(this.state.tag + "lam");
+        console.log(this.state.tag + "lamb");
         console.log(this.state.duration * 0.5 + "sss");
         if (data.currentTime > this.state.duration * 0.5 && this.state.tag !== 2) {
             this.setState({paused: !this.state.paused});
@@ -90,11 +90,13 @@ export default class VideoScreen extends Component {
                 {
                     text: '取消', onPress: () => {
                         this.props.navigation.goBack();
+                        this.setState({
+                            paused: this.state.paused
+                        })
                     }
                 },
                 {
                     text: '分享', onPress: () => {
-                        console.log(this.state.tag + "lamb");
                         this.props.navigation.navigate('Movie', {
                             returnData: (tag) => {
                                 this.setState({tag: tag});
@@ -103,8 +105,6 @@ export default class VideoScreen extends Component {
                     }
                 },
             ]);
-        } else if (this.state.tag === 1) {
-            this.setState({paused: false});
         }
     };
 
@@ -164,10 +164,11 @@ export default class VideoScreen extends Component {
                         {formatTime(this.state.duration - this.state.currentTime)}
                     </Text>
 
-                    <Button style={styles.btnStyle} title={'关闭广告'} color={'#73808080'}
-                            onPress={() => {
-                                this.props.navigation.goBack()
-                            }}/>
+                    <Button
+                        style={styles.btnStyle} title={'关闭广告'} color={'#73808080'}
+                        onPress={() => {
+                            this.props.navigation.goBack()
+                        }}/>
                 </View>
 
                 <View style={styles.controls}>

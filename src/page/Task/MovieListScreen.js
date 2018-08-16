@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
-import {View, FlatList, Text, ActivityIndicator, StyleSheet, BackHandler} from 'react-native';
+import {
+    View,
+    FlatList,
+    Text,
+    ActivityIndicator,
+    StyleSheet,
+    BackHandler,
+    Dimensions,
+    StatusBar, Platform
+} from 'react-native';
 import {queryMovies, comingMovies} from '../../utils/apiUtils';
 import MovieItemCell from "../../widget/MovieItemCell";
+import NavBar from "../../common/NavBar";
+import px2dp from "../../utils/px2dp";
 
+const {width} = Dimensions.get('window');
 export default class MovieListScreen extends Component {
 
     static navigationOptions = {
-        headerTitle: '豆瓣电影'
+        header: null
     };
 
     constructor(props) {
@@ -55,13 +67,37 @@ export default class MovieListScreen extends Component {
             )
         }
         return (
-            <FlatList
-                data={this.state.movieList}
-                renderItem={this._renderItem}
-                keyExtractor={(item) => item.id}
-            />
+            <View style={{flex: 1}}>
+                <StatusBar
+                    translucent={false}
+                    animated={true}
+                    backgroundColor={"#1E82D2"}
+                    barStyle={"light-content"}
+                />
+                <NavBar
+                    title="豆瓣电影"
+                    leftIcon="ios-arrow-back"
+                    leftPress={
+                        // const {navigate, goBack, state} = this.props.navigation;
+                        // state.params.returnData(2);
+                        // goBack();
+                        this.leftPress
+                    }
+                    // titleStyle={styles.titleStyle}
+                    // style={styles.style}
+                />
+                <FlatList
+                    data={this.state.movieList}
+                    renderItem={this._renderItem}
+                    keyExtractor={(item) => item.id}
+                /></View>
         )
     }
+
+    leftPress = () => {
+        this.props.navigation.state.params.returnData(2);
+        this.props.navigation.goBack();
+    };
 
     _renderItem = (item) => {
         return (
@@ -178,5 +214,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10
+    },
+    sBar: {
+        height: StatusBar.currentHeight,
+        width: width
+    },
+    style: {
+        height: NavBar.topbarHeight,
+        backgroundColor: "#fff",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingTop: (Platform.OS === 'ios') ? 20 : 0,
+        paddingHorizontal: px2dp(10)
+    },
+    titleStyle: {
+        fontSize: 16,
+        color: '#000',
+        fontWeight: "bold",
     }
 });
