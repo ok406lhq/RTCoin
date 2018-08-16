@@ -1,5 +1,5 @@
 /**
- * Created by zerowolf on 2018/4/8.
+ * Created by lam on 2018/8/8.
  */
 import Storage from 'react-native-storage';
 import {AsyncStorage} from 'react-native';

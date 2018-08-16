@@ -2,7 +2,7 @@
 import realm from "../storage/realm";
 
 /**
- * Created by zerowolf Date: 2018/5/21 Time: 下午9:34
+ * Created by lam Date: 2018/8/11 Time: 下午9:34
  */
 const save2Realm = (data) => {
 

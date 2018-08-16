@@ -1,6 +1,6 @@
 /*
 /!**
- * Created by zerowolf Date: 2018/5/26 Time: 上午10:09
+ * Created by lam Date: 2018/8/11 Time: 上午10:09
  *!/
 import {Dimensions, Platform, PixelRatio, StatusBar} from 'react-native'
 
@@ -66,7 +66,7 @@ export {
 */
 
 /**
- * Created by zerowolf Date: 2018/5/26 Time: 上午10:09
+ * Created by lam Date: 2018/8/11 Time: 上午10:59
  */
 import {Dimensions, Platform, PixelRatio, StatusBar} from 'react-native'
 

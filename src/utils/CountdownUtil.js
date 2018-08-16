@@ -1,5 +1,5 @@
 /**
- * Created by zerowolf on 2018/4/3.
+ * Created by lam on 2018/8/13.
  */
 export default class CountdownUtil {
 

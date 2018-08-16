@@ -1,5 +1,5 @@
 /**
- * Created by zerowolf on 2018/1/16.
+ * Created by lam on 2018/8/13.
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';

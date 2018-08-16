@@ -1,6 +1,6 @@
 /**
  *
- * Created by zerowolf on 2017/11/14.
+ * Created by lam on 2017/11/14.
  */
 import Realm from 'realm';
 import realm from './realm';

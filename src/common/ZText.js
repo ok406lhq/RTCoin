@@ -1,11 +1,11 @@
 /**
- * Created by zerowolf Date: 2018/5/30 Time: 下午6:10
+ * Created by lam Date: 2018/8/11 Time: 下午6:10
  */
 
 import {zsp} from "../utils/ScreenUtil";
 
 /**
- * Created by zerowolf Date: 2018/5/16 Time: 下午2:57
+ * Created by lam Date: 2018/8/11 Time: 下午2:57
  */
 const {width, height} = Dimensions.get('window');
 import React, {Component} from 'react';

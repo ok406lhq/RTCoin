@@ -1,5 +1,5 @@
 /**
- * Created by zerowolf Date: 2018/5/14 Time: 下午5:07
+ * Created by lam Date: 2018/8/14 Time: 下午5:07
  */
 import CountdownUtil from "./CountdownUtil";
 import ToastUtil from "./ToastUtil";

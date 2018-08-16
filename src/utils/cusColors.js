@@ -1,5 +1,5 @@
 /**
- * Created by zerowolf Date: 2018/5/17 Time: 下午9:02
+ * Created by lam Date: 2018/8/11 Time: 下午9:02
  */
 const cusColors = {
     // linear_light: '#8B80FF',
