@@ -82,7 +82,7 @@ export default class VideoScreen extends Component {
         this.setState({currentTime: data.currentTime});
         console.log(data.currentTime + "hhh");
         this.params = this.props.navigation.state.params;
-        console.log(this.state.tag + "lamb");
+        console.log(this.state.tag + "lam");
         console.log(this.state.duration * 0.5 + "sss");
         if (data.currentTime > this.state.duration * 0.5 && this.state.tag !== 2) {
             this.setState({paused: !this.state.paused});
