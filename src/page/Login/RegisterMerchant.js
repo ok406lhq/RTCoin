@@ -126,7 +126,7 @@ export default class RegisterMerchant extends Component {
                     />
                     <View style={{
                         width,
-                        height: zdp(119),
+                        height: zdp(119.5),
                         justifyContent: 'flex-start',
                         alignItems: 'center'
                     }}>
