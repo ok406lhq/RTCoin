@@ -99,6 +99,7 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/23.png"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/24.jpg"/>
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/25.png"/>
+</div>
 
 ###### 2、VideoScreen做了对播放进度的监听处理，使得弹出弹框进入分享界面，分享界面还没做，后续会跟上...
 </div>
