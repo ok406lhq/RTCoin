@@ -101,7 +101,7 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/25.png"/>
 </div>
 
-###### 2、VideoScreen做了对播放进度的监听处理，使得弹出弹框进入分享界面，分享界面还没做，后续会跟上...
+###### 2、VideoScreen做了对播放进度的监听处理，使得弹出弹框进入分享界面，分享界面还没做，后续会跟上...另外，关于如何跳转回调使得播放进度继续进行，我写了个博客[react-navigation的回调跳转]（https://www.jianshu.com/p/8a48fc39bab7）作为知识总结，分享给大家~
 </div>
 <div align="center">
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/26.png"/>
