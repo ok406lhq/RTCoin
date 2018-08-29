@@ -57,7 +57,7 @@ export default class Item extends Component {
         iconSize: PropTypes.number,
         font: PropTypes.string,
         onPress: PropTypes.func
-    }
+    };
 
     _render() {
         let {icon, iconSize, name, subName, color, first, avatar, disable, font} = this.props;

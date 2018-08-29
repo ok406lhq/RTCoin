@@ -21,14 +21,16 @@ let hMargin = 20;
 
 export const data = [
     {
-        icon: require('../img/icon1.jpg'),
-        title: '每日登陆',
-        "btn": "+10算力"
+        icon: require('../img/icon1.png'),
+        title: '每日登陆，+10算力',
+        "btn": "已完成",
+        "underlayColor": "#98999B"
     },
     {
         icon: require('../img/icon2.jpg'),
         title: '邀请10名好友',
-        "btn": "+10算力"
+        "btn": "+11算力",
+        "underlayColor": "#1E82D2"
     }
 ];
 
@@ -71,8 +73,9 @@ export default class listViewComponent extends Component {
                             width: 70,
                             height: 18,
                             borderRadius: 25,
+                            backgroundColor: rowData.underlayColor
                         }}
-                        underlayColor='#4169e1'>
+                        underlayColor={rowData.underlayColor}>
                     </RadiusButton>
                 </View>
             </TouchableOpacity>
@@ -80,10 +83,8 @@ export default class listViewComponent extends Component {
     }
 
     _onPress(e) {
-
         alert(">>>点击 " + e);
     }
-
 }
 
 

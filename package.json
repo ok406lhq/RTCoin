@@ -16,6 +16,7 @@
     "react-native-charts-wrapper": "^0.4.3",
     "react-native-contacts-picker": "0.0.7",
     "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-image-picker": "^0.26.10",
     "react-native-keyboard-aware-scroll-view": "^0.6.0",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-scrollable-tab-view": "^0.8.0",

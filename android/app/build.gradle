@@ -148,8 +148,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-picker')
     compile project(':realm')
-     compile project(':react-native-linear-gradient')
+    compile project(':react-native-linear-gradient')
     compile project(':react-native-charts-wrapper')
     compile project(':react-native-vector-icons')
     compile project(':react-native-splash-screen')

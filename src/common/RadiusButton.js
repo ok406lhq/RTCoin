@@ -19,6 +19,7 @@ export default class RadiusButton extends Component {
         textStyle: Text.propTypes.style,
         btnStyle: TouchableHighlight.propTypes.style,
         underlayColor: TouchableHighlight.propTypes.underlayColor,
+        backgroundColor: TouchableHighlight.propTypes.backgroundColor
     };
 
     static defaultProps = {
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
         width: 100,
         height: 20,
         backgroundColor: '#1E82D2',
-        borderColor: '#1E82D2',
+        borderColor: '#ffffff',
         borderRadius: 15,
         borderWidth: (Platform.OS === 'ios' ? 1.0 : 1.5) / PixelRatio.get(),
     },
