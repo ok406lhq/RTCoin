@@ -103,8 +103,17 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                JPUSH_APPKEY: "d6685fc0f4f949a31379f9b3",
+                APP_CHANNEL : "default"
+        ]
+
         ndk {
             abiFilters "armeabi-v7a", "x86"
+        }
+
+        packagingOptions {
+                exclude "lib/arm64-v8a/libgnustl_shared.so"
         }
     }
 
@@ -148,6 +157,8 @@ android {
 }
 
 dependencies {
+    compile project(':jcore-react-native')
+    compile project(':jpush-react-native')
     compile project(':react-native-image-picker')
     compile project(':realm')
     compile project(':react-native-linear-gradient')

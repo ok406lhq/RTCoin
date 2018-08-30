@@ -15,6 +15,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.imagepicker.ImagePickerPackage;
+import cn.jpush.reactnativejpush.JPushPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +28,11 @@ public class MainApplication extends Application implements ReactApplication {
       return BuildConfig.DEBUG;
     }
 
+   // 设置为 true 将不弹出 toast
+    private boolean SHUTDOWN_TOAST = false;
+    // 设置为 true 将不打印 log
+    private boolean SHUTDOWN_LOG = false;
+
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
@@ -38,7 +44,8 @@ public class MainApplication extends Application implements ReactApplication {
             new SplashScreenReactPackage(),
             new ReactNativeContacts(),
             new ReactVideoPackage(),
-            new ImagePickerPackage()
+            new ImagePickerPackage(),
+            new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG)
       );
     }
 

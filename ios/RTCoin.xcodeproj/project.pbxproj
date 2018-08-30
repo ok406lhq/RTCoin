@@ -56,6 +56,19 @@
 		41A4438548A44947A03F4AE0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1AC611B68D46089C826AB8 /* libc++.tbd */; };
 		F9967E35A8104EB8BC7D205E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B1407CF5476349C080AFF275 /* libz.tbd */; };
 		187113C1F0DC4695A54DA808 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD3F97E2F1D44D1984F400C /* libBVLinearGradient.a */; };
+		631388BCD2E042C4A82C9F06 /* libRCTJCoreModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 914A98DCBD7148BDA6D2AF0D /* libRCTJCoreModule.a */; };
+		139EA1E680C94E59ADF1D926 /* libRCTJPushModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932D4AF7DD3349DCB0721487 /* libRCTJPushModule.a */; };
+		F24F363042E14109937792B5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554BBC212EB54C80BBCFC161 /* UserNotifications.framework */; };
+		3DD46229815A41D5BF051AD4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7691E96E3D5A412280C37847 /* CoreTelephony.framework */; };
+		FF2383BCED304BF08BA1A68E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEE55D2038D4811859834A4 /* Security.framework */; };
+		18AFB62DF98D4249846D6755 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A73B2D6B634F8298368663 /* CFNetwork.framework */; };
+		ADE1E93B3F2D430287A9D401 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEBC365FC4B4034BC8B5FB7 /* CoreFoundation.framework */; };
+		16A8F4899C0143048F0E3E65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C8608AF52D440A9ECFECD7 /* SystemConfiguration.framework */; };
+		D009C15795154A638C1E2F74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DC476C4892413EAED02AD6 /* Foundation.framework */; };
+		7C3F0E8BA71741BB9F938940 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE14C1E7C1B44B329A286863 /* UIKit.framework */; };
+		756305FC87704211AE50B5FA /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C74E100F4FD4C79A4BDBEA9 /* libresolv.tbd */; };
+		F79A3555B8994BF4B7C5458C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DEA64C9E1649BCAB339DDC /* CoreGraphics.framework */; };
+		314863589285438E86A3D944 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DC2E924D584E9489A15CAF /* libRNImagePicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -386,6 +399,22 @@
 		B1407CF5476349C080AFF275 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 		FEBB442FA0234EBD9B13B0F1 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		6CD3F97E2F1D44D1984F400C /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		35040E89E5804383A7040739 /* RCTJCoreModule.xcodeproj */ = {isa = PBXFileReference; name = "RCTJCoreModule.xcodeproj"; path = "../node_modules/jcore-react-native/ios/RCTJCoreModule.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		914A98DCBD7148BDA6D2AF0D /* libRCTJCoreModule.a */ = {isa = PBXFileReference; name = "libRCTJCoreModule.a"; path = "libRCTJCoreModule.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		73B5E37851884AC480C8D04D /* RCTJPushModule.xcodeproj */ = {isa = PBXFileReference; name = "RCTJPushModule.xcodeproj"; path = "../node_modules/jpush-react-native/ios/RCTJPushModule.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		932D4AF7DD3349DCB0721487 /* libRCTJPushModule.a */ = {isa = PBXFileReference; name = "libRCTJPushModule.a"; path = "libRCTJPushModule.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		554BBC212EB54C80BBCFC161 /* UserNotifications.framework */ = {isa = PBXFileReference; name = "UserNotifications.framework"; path = "System/Library/Frameworks/UserNotifications.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		7691E96E3D5A412280C37847 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		5FEE55D2038D4811859834A4 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		70A73B2D6B634F8298368663 /* CFNetwork.framework */ = {isa = PBXFileReference; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1FEBC365FC4B4034BC8B5FB7 /* CoreFoundation.framework */ = {isa = PBXFileReference; name = "CoreFoundation.framework"; path = "System/Library/Frameworks/CoreFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		B7C8608AF52D440A9ECFECD7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		18DC476C4892413EAED02AD6 /* Foundation.framework */ = {isa = PBXFileReference; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		BE14C1E7C1B44B329A286863 /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		8C74E100F4FD4C79A4BDBEA9 /* libresolv.tbd */ = {isa = PBXFileReference; name = "libresolv.tbd"; path = "usr/lib/libresolv.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		89DEA64C9E1649BCAB339DDC /* CoreGraphics.framework */ = {isa = PBXFileReference; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		60B7A1D546694147A70E9E7B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		93DC2E924D584E9489A15CAF /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +451,19 @@
 				41A4438548A44947A03F4AE0 /* libc++.tbd in Frameworks */,
 				F9967E35A8104EB8BC7D205E /* libz.tbd in Frameworks */,
 				187113C1F0DC4695A54DA808 /* libBVLinearGradient.a in Frameworks */,
+				631388BCD2E042C4A82C9F06 /* libRCTJCoreModule.a in Frameworks */,
+				139EA1E680C94E59ADF1D926 /* libRCTJPushModule.a in Frameworks */,
+				F24F363042E14109937792B5 /* UserNotifications.framework in Frameworks */,
+				3DD46229815A41D5BF051AD4 /* CoreTelephony.framework in Frameworks */,
+				FF2383BCED304BF08BA1A68E /* Security.framework in Frameworks */,
+				18AFB62DF98D4249846D6755 /* CFNetwork.framework in Frameworks */,
+				ADE1E93B3F2D430287A9D401 /* CoreFoundation.framework in Frameworks */,
+				16A8F4899C0143048F0E3E65 /* SystemConfiguration.framework in Frameworks */,
+				D009C15795154A638C1E2F74 /* Foundation.framework in Frameworks */,
+				7C3F0E8BA71741BB9F938940 /* UIKit.framework in Frameworks */,
+				756305FC87704211AE50B5FA /* libresolv.tbd in Frameworks */,
+				F79A3555B8994BF4B7C5458C /* CoreGraphics.framework in Frameworks */,
+				314863589285438E86A3D944 /* libRNImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +615,16 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				1D1AC611B68D46089C826AB8 /* libc++.tbd */,
 				B1407CF5476349C080AFF275 /* libz.tbd */,
+				554BBC212EB54C80BBCFC161 /* UserNotifications.framework */,
+				7691E96E3D5A412280C37847 /* CoreTelephony.framework */,
+				5FEE55D2038D4811859834A4 /* Security.framework */,
+				70A73B2D6B634F8298368663 /* CFNetwork.framework */,
+				1FEBC365FC4B4034BC8B5FB7 /* CoreFoundation.framework */,
+				B7C8608AF52D440A9ECFECD7 /* SystemConfiguration.framework */,
+				18DC476C4892413EAED02AD6 /* Foundation.framework */,
+				BE14C1E7C1B44B329A286863 /* UIKit.framework */,
+				8C74E100F4FD4C79A4BDBEA9 /* libresolv.tbd */,
+				89DEA64C9E1649BCAB339DDC /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -616,6 +668,9 @@
 				464FEDD7D3D34323B6812EAC /* RNVectorIcons.xcodeproj */,
 				507725FE850F44AC91188F8C /* RealmReact.xcodeproj */,
 				FEBB442FA0234EBD9B13B0F1 /* BVLinearGradient.xcodeproj */,
+				35040E89E5804383A7040739 /* RCTJCoreModule.xcodeproj */,
+				73B5E37851884AC480C8D04D /* RCTJPushModule.xcodeproj */,
+				60B7A1D546694147A70E9E7B /* RNImagePicker.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1279,6 +1334,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1288,6 +1346,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Debug;
@@ -1314,6 +1375,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1323,6 +1387,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Release;
@@ -1350,6 +1417,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Debug;
@@ -1376,6 +1446,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Release;
@@ -1411,6 +1484,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1420,6 +1496,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Debug;
@@ -1455,6 +1534,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1464,6 +1546,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Release;
@@ -1498,6 +1583,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1507,6 +1595,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Debug;
@@ -1541,6 +1632,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1550,6 +1644,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\realm\src/**",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
+					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 				);
 			};
 			name = Release;
