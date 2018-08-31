@@ -5,12 +5,21 @@ import App from './app';
 import SplashScreen from "react-native-splash-screen";
 import JPushModule from "jpush-react-native";
 
+
 const store = configureStore();
 store.subscribe(() => {
     //监听state变化
     console.log(store.getState());
 });
 export default class Root extends Component {
+    // 构造
+      constructor(props) {
+        super(props);
+        // 初始状态
+          //应用注册
+
+      }
+
     componentDidMount() {
         SplashScreen.hide(); // 隐藏启动屏
         // 新版本必需写回调函数

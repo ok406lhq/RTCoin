@@ -25,6 +25,12 @@
         android:value="${APP_CHANNEL}" />
 
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <!-- 微信Activity -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:label="@string/app_name"
+            android:exported="true"
+        />
     </application>
 
 </manifest>

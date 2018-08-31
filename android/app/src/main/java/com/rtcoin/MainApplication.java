@@ -16,6 +16,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.imagepicker.ImagePickerPackage;
 import cn.jpush.reactnativejpush.JPushPackage;
+import com.theweflex.react.WeChatPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,7 +46,8 @@ public class MainApplication extends Application implements ReactApplication {
             new ReactNativeContacts(),
             new ReactVideoPackage(),
             new ImagePickerPackage(),
-            new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG)
+            new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG),
+            new WeChatPackage()
       );
     }
 

@@ -97,7 +97,7 @@ export default class VideoScreen extends Component {
                 },
                 {
                     text: '分享', onPress: () => {
-                        this.props.navigation.navigate('Movie', {
+                        this.props.navigation.navigate('Share', {
                             returnData: (tag) => {
                                 this.setState({tag: tag});
                             }
