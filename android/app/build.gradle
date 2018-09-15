@@ -157,10 +157,10 @@ android {
 }
 
 dependencies {
+    compile project(':RCTWeChat')
     compile project(':jcore-react-native')
     compile project(':jpush-react-native')
     compile project(':react-native-image-picker')
-    compile project(':realm')
     compile project(':react-native-linear-gradient')
     compile project(':react-native-charts-wrapper')
     compile project(':react-native-vector-icons')

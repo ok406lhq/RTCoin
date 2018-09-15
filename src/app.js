@@ -16,6 +16,7 @@ import ForgetPsw from "./page/Login/ForgetPsw";
 import RegisterMerchant from "./page/Login/RegisterMerchant";
 import RegisterMerchantNext from "./page/Login/RegisterMerchantNext";
 import RegisterSuccess from "./page/Login/RegisterSuccess";
+import ShareScreen from "./page/Task/ShareScreen";
 
 const App = StackNavigator({
         // Web: {screen: WebScreen},
@@ -26,6 +27,7 @@ const App = StackNavigator({
         News: {screen: NewsListScreen},
         Video: {screen: VideoScreen},
         Contact: {screen: ContactScreen},
+        Share: {screen: ShareScreen},
         Pay: {screen: PayScreen},
         Login: {screen: LoginScreen}, // 登录页
         LoginByVerify: {screen: LoginByVerify}, // 短信登录

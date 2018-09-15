@@ -83,8 +83,8 @@ export default class VideoScreen extends Component {
         console.log(data.currentTime + "hhh");
         this.params = this.props.navigation.state.params;
         console.log(this.state.tag + "lam");
-        console.log(this.state.duration * 0.5 + "sss");
-        if (data.currentTime > this.state.duration * 0.5 && this.state.tag !== 2) {
+        console.log(this.state.duration * 0.1 + "sss");
+        if (data.currentTime > this.state.duration * 0.1 && this.state.tag !== 2) {
             this.setState({paused: !this.state.paused});
             Alert.alert('您需要分享App才能继续观看视频哦', '请选择', [
                 {
@@ -97,7 +97,7 @@ export default class VideoScreen extends Component {
                 },
                 {
                     text: '分享', onPress: () => {
-                        this.props.navigation.navigate('Movie', {
+                        this.props.navigation.navigate('Share', {
                             returnData: (tag) => {
                                 this.setState({tag: tag});
                             }

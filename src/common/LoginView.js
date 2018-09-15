@@ -12,7 +12,6 @@ import {
 import {checkMobile} from "../utils/CheckUitls";
 import {fetchRequest} from "../utils/FetchUtil";
 import ToastUtil from "../utils/ToastUtil";
-import {SPReadLoginInfo, SPSaveLoginInfo} from "../storage/Storage";
 import MyTextInputWithIcon from "./MyTextInputWithIcon";
 import {
     isIphoneX,
@@ -44,23 +43,6 @@ export default class LoginView extends Component {
     componentDidMount() {
         // this.pressLogin();
         // alert(zStatusBarHeight);
-        SPReadLoginInfo()
-            .then(res => {
-                console.log(res);
-                this.setState({
-                    phone: res.phone,
-                    // password: res.password
-                })
-
-                //todo DEV
-                /*  if (InitConfig.isLoginDirect) {
-                      setTimeout(()=>{
-                      this.pressLogin()
-                      },1000)
-                  }*/
-            }).catch(err => {
-
-        })
     }
 
     static defaultProps = {
@@ -85,7 +67,6 @@ export default class LoginView extends Component {
                     if (res.respCode === 200 && !this.state.isLoading) {
                         console.log(res.data);
 
-                        SPSaveLoginInfo(this.state.phone, this.state.password);
                         this.props.navigate('Home');
                     } else {
                         ToastUtil.showShort(res.respMsg);

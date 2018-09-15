@@ -3,8 +3,8 @@ package com.rtcoin;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.theweflex.react.WeChatPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
-import io.realm.react.RealmReactPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -37,8 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new WeChatPackage(),
             new LinearGradientPackage(),
-            new RealmReactPackage(),
             new MPAndroidChartPackage(),
             new VectorIconsPackage(),
             new SplashScreenReactPackage(),

@@ -8,7 +8,6 @@ import {
     Dimensions,
     BackHandler
 } from 'react-native';
-import realm from "../../storage/realm";
 import CountdownUtil from "../../utils/CountdownUtil";
 import {isIphoneX, zAppBarHeight, zdp, zsp} from "../../utils/ScreenUtil";
 import MyTabView from "../../common/MyTabView";
@@ -47,17 +46,6 @@ export default class LoginByVerify extends Component {
         //         // })
     }
 
-    // 删除
-    removeData() {
-        realm.write(() => {
-            // 获取Person对象
-            let User = realm.objects('User');
-            let Card = realm.objects('Card');
-            // 删除
-            realm.delete(User);
-            realm.delete(Card);
-        })
-    }
 
     componentDidMount() {
         BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
