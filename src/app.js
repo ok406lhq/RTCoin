@@ -29,6 +29,7 @@ const App = StackNavigator({
         Contact: {screen: ContactScreen},
         Share: {screen: ShareScreen},
         Pay: {screen: PayScreen},
+        Share: {screen: ShareScreen},
         Login: {screen: LoginScreen}, // 登录页
         LoginByVerify: {screen: LoginByVerify}, // 短信登录
         ForgetPsw: {screen: ForgetPsw}, // 忘记密码

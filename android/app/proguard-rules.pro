@@ -36,6 +36,10 @@
     @com.facebook.common.internal.DoNotStrip *;
 }
 
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+
 -keepclassmembers @com.facebook.proguard.annotations.KeepGettersAndSetters class * {
   void set*(***);
   *** get*();
