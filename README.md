@@ -108,5 +108,31 @@
     <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/27.png"/>
 </div>
 
+* 9.30更新:punch::punch::punch:
+最后一次更新啦:kissing_cat::heart::heart::heart:多谢大家的star！明天就国庆了，好好玩也要好好学习鸭~:laughing:
+###### 1、新增了微信分享，需要到微信开发者公众平台申请哦，申请步骤和使用方法可以参考我的这篇博客，里边有详细的介绍，是结合了本项目的一次实践Demo，博客在此[React Native第三方接口之微信分享](https://www.jianshu.com/p/0b8f0f4a94ed),需要的话可以参考下~
 
+![微信开放平台](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/28.png)
+
+###### 实现后的小截图：
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/32.jpg"/>
+</div>
+
+###### 2、新增了极光推送，同样需要用到第三方极光推送的接口（废话？我在说什么？），大家可以去他家官网查看文档[极光数据](https://www.jiguang.cn/)
+###### 下面是申请创建应用后的管理界面：
+![微信开放平台](https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/29.jpg)
+
+###### 同样，实现后的小截图：
+<div align="center">
+    <img width="300" height="216" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/30.jpg"/>
+</div>
+
+###### 3、最后一点，新增了点击个人信息头像后的选择照片|拍照的实现，这里用到了这个库[react-native-image-picker](https://github.com/react-community/react-native-image-picker)
+###### 效果如下：
+<div align="center">
+    <img width="280" height="497" src="https://raw.githubusercontent.com/ok406lhq/RTCoin/master/screenshots/31.jpg"/>
+</div>
+
+##### OK!Done 这个项目我就不加以维护了，如果能帮到大家学习的话，我是真的觉得很受鼓励:wink:，继续出发~:point_right:下一站是哪里呢？
 [点我回到顶部](#readme)
