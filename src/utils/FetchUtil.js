@@ -2,7 +2,7 @@
 
 import ToastUtil from "./ToastUtil";
 
-export const common_url = 'http://sjpay.githubshop.com/app/';  //服务器地址
+export const common_url = 'http://******/';  //服务器地址
 // export const common_url = 'http://39.104.64.38:81/app/';  //服务器地址
 /**
  * @param {string} url 接口地址
